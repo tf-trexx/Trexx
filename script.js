@@ -7,10 +7,15 @@ buttons.forEach(button => {
     if (!isMobile) {
         button.addEventListener('mouseenter', (e) => {
             showTooltip(e, button);
+            activateBlur(); // Activate blur on hover
         });
 
         button.addEventListener('mouseleave', () => {
-            hideTooltip();
+            // Check if the tooltip is visible
+            if (!tooltip.matches(':hover')) {
+                hideTooltip();
+                deactivateBlur(); // Deactivate blur only if not hovering over tooltip
+            }
         });
     }
 
@@ -19,25 +24,33 @@ buttons.forEach(button => {
         let pressTimer;
 
         button.addEventListener('touchstart', (e) => {
-            // Set a timer for long press (1 second)
-            pressTimer = setTimeout(() => showTooltip(e, button), 1000);
+            pressTimer = setTimeout(() => {
+                showTooltip(e, button);
+                activateBlur(); // Activate blur on press
+            }, 1000);
         });
 
         button.addEventListener('touchend', () => {
-            clearTimeout(pressTimer); // Clear the timer if touch ends early
-            hideTooltip();
+            clearTimeout(pressTimer);
+            // Hide tooltip but keep blur if the tooltip is hovered
+            if (!tooltip.matches(':hover')) {
+                hideTooltip();
+                deactivateBlur(); // Deactivate blur when touch ends
+            }
         });
     }
 });
 
-// Hide tooltip if mouse leaves tooltip area
+// Hide tooltip if mouse enters tooltip area
 tooltip.addEventListener('mouseenter', () => {
     tooltip.style.transform = 'scale(1)'; // Keep it visible
 });
 
+// Hide tooltip and deactivate blur if mouse leaves tooltip area
 tooltip.addEventListener('mouseleave', () => {
-    tooltip.style.transform = 'scale(0)'; // Hide when mouse leaves
-}); 
+    hideTooltip();
+    deactivateBlur(); // Deactivate blur when mouse leaves
+});
 
 // Function to show tooltip
 function showTooltip(e, button) {
@@ -56,4 +69,14 @@ function showTooltip(e, button) {
 // Function to hide tooltip
 function hideTooltip() {
     tooltip.style.transform = 'scale(0)'; // Scale down to hide
+}
+
+// Activate blur function
+function activateBlur() {
+    document.body.classList.add('blur-active'); // Add blur-active class
+}
+
+// Deactivate blur function
+function deactivateBlur() {
+    document.body.classList.remove('blur-active'); // Remove blur-active class
 }
