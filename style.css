@@ -35,6 +35,11 @@ body {
     max-height: 100px; /* Optional: maximum height */
     margin-top: 20%;
     margin-left: 25%;
+     -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+    pointer-events: none; /* Prevents all interaction with the button */
 }
 
 .grid-item:hover {
