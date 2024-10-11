@@ -127,18 +127,8 @@ body {
         
     }
 
-    .tooltip {
-        width: 280px; /* Adjust the width for phones */
-        height: 280px; /* Adjust the height for phones */
-        font-size: 14px; /* Make text smaller for phones */
-        padding: 10px; /* Adjust padding for better fit */
-        position: fixed; /* Make the tooltip fixed to the viewport */
-        left: 50%; /* Center horizontally */
-        top: 50%; /* Center vertically */
-        transform: translate(-50%, -50%) scale(0); /* Initial hidden state */
-        transition: transform 0.5s ease; /* Smooth transition */
-    
-    }
+  
+
 
 }
 
