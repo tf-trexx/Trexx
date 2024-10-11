@@ -37,6 +37,21 @@ body {
     margin-left: 25%;
     font-weight: bold;
     font-style: italic;
+
+
+    /* Prevent text selection */
+    user-select: none;  /* Makes button text unselectable */
+
+
+    /* Remove blue highlight effect on mobile */
+    -webkit-tap-highlight-color: transparent;  /* For Safari and Chrome on mobile */
+
+    /* Remove focus outline */
+    outline: none;
+}
+
+.grid-item:active {
+    outline: none; /* Optionally remove outline on click */
     
 }
 
@@ -117,7 +132,7 @@ body {
         height: 280px; /* Adjust the height for phones */
         font-size: 14px; /* Make text smaller for phones */
         padding: 10px; /* Adjust padding for better fit */
-       
+    
     }
 
 }
