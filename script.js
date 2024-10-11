@@ -77,18 +77,16 @@ function showTooltip(e, button) {
 
 // Function to hide tooltip
 function hideTooltip() {
+    if (isMobile) {
+        tooltip.style.transform = 'translate(-50%, -50%) scale(0)'; // Scale down smoothly
+        tooltip.style.opacity = '0'; // Fade out
+        setTimeout(() => {
+            tooltip.style.display = 'none'; // After the animation ends, hide it completely
+        }, 500); // Match this time with the transition duration (0.5s)
+    } else {
     tooltip.style.transform = 'scale(0)'; // Scale down to hide
 }
-
-// Hide tooltip function for mobile (with smoother transition)
-function hideTooltipMobile() {
-    tooltip.style.transform = 'translate(-50%, -50%) scale(0)';
-    tooltip.style.opacity = '0'; // Fade out
-    setTimeout(() => {
-        tooltip.style.display = 'none';
-    }, 600); // Longer duration for mobile smoother transition
 }
-
 // Activate blur function
 function activateBlur() {
     document.body.classList.add('blur-active'); // Add blur-active class
