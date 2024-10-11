@@ -82,14 +82,6 @@ body {
     z-index: 100; /* Ensure tooltip stays above everything */
 }
 
-/* Tooltip when active */
-.tooltip.active {
-    display: flex;
-    transform: scale(1);
-    opacity: 1; /* Fully visible */
-}
-
-
 
 /* Blur and gradient effect */
 .blur-active {
@@ -134,24 +126,6 @@ body {
         font-size: 24px;
         
     }
-
-     .tooltip {
-        width: 280px; /* Adjust the width for phones */
-        height: 280px; /* Adjust the height for phones */
-        font-size: 14px; /* Make text smaller for phones */
-        padding: 10px; /* Adjust padding for better fit */
-        position: fixed; /* Make the tooltip fixed to the viewport */
-        left: 50%; /* Center horizontally */
-        top: 50%; /* Center vertically */
-        transform: translate(-50%, -50%) scale(0); /* Initial hidden state */
-    
-    }
-
-    .tooltip.active {
-        transform: translate(-50%, -50%) scale(1); /* Smooth transition to full size */
-    }
-
-
 
 }
 
