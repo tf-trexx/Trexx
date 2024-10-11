@@ -127,6 +127,14 @@ body {
         
     }
 
+    .tooltip {
+        width: 280px; /* Adjust the width for phones */
+        height: 280px; /* Adjust the height for phones */
+        font-size: 14px;
+        padding: 10px;
+        position: fixed; /* Make the tooltip fixed to the viewport */
+    }
+
 }
 
 
