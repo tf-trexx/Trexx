@@ -57,6 +57,13 @@ function showTooltip(e, button) {
     tooltip.innerHTML = button.getAttribute('data-info'); // Set tooltip content using innerHTML
     tooltip.style.display = 'flex'; // Show tooltip
 
+     // For mobile, center the tooltip
+     if (isMobile) {
+        tooltip.style.left = '50%';
+        tooltip.style.top = '50%';
+        tooltip.style.transform = 'translate(-50%, -50%) scale(1)'; // Center the tooltip and scale up
+    } else {
+
     // For mouse/cursor events, use clientX and clientY
     let x = e.clientX || e.touches[0].clientX; // Handle both mouse and touch
     let y = e.clientY || e.touches[0].clientY;
@@ -64,6 +71,7 @@ function showTooltip(e, button) {
     tooltip.style.left = `${Math.min(x + 10, window.innerWidth - 410)}px`; // Adjust position
     tooltip.style.top = `${Math.min(y + 10, window.innerHeight - 410)}px`;
     tooltip.style.transform = 'scale(1)'; // Scale up to show
+    }
 }
 
 // Function to hide tooltip
