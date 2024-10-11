@@ -63,8 +63,8 @@ body {
     position: absolute;
     width: 400px; /* Width of the tooltip */
     height: 400px; /* Height of the tooltip */
-    background-color: rgba(245, 141, 210, 0.699); /* Dark background */
-    color: rgb(255, 191, 230); /* Text color */
+    background-color: #fdc7944f; /* Dark background */
+    color: rgb(155, 104, 70); /* Text color */
     border-radius: 20px; /* Curvy edges */
     display: none; /* Hidden by default */
     align-items: center; /* Center content */
