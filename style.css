@@ -19,8 +19,8 @@ body {
 .grid-item {
     border: none; /* No border */
     background-color: #ddbba0; /* Button background color */
-    color: white; /* Text color */
-    font-size: 14pxpx; /* Reduced font size */
+    color: rgb(255, 233, 207); /* Text color */
+    font-size: 24px; /* Reduced font size */
     cursor: pointer; /* Pointer cursor on hover */
     display: flex; /* Center text in button */
     justify-content: center; /* Center text horizontally */
@@ -28,13 +28,16 @@ body {
     transition: background-color 0.3s; /* Transition for hover effect */
     margin: 10px; /* Adds space around buttons */
     padding: 10px; /* Adds padding inside buttons */
-    border-radius: 30px;
+    border-radius: 40px;
     width: 80%; /* Set a fixed width */
     height: 80%; /* Set a fixed height */
     max-width: 40%; /* Optional: maximum width */
     max-height: 100px; /* Optional: maximum height */
     margin-top: 20%;
     margin-left: 25%;
+    font-weight: bold;
+    font-style: italic;
+    
 }
 
 .grid-item:hover {
@@ -103,6 +106,18 @@ body {
         margin-left: 15%;
         margin-top: 60%;
         max-width: 70%;
+    }
+
+    .tooltip {
+        width: 280px; /* Adjust the width for phones */
+        height: 280px; /* Adjust the height for phones */
+        font-size: 14px; /* Make text smaller for phones */
+        padding: 10px; /* Adjust padding for better fit */
+        position: fixed; /* Make the tooltip fixed to the viewport */
+        left: 50%; /* Center horizontally */
+        top: 50%; /* Center vertically */
+        transform: translate(-50%, -50%) scale(0); /* Initial hidden state */
+        transition: transform 0.3s ease; /* Smooth transition */
     }
 
 }
