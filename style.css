@@ -121,7 +121,6 @@ body {
         left: 50%; /* Center horizontally */
         top: 50%; /* Center vertically */
         transform: translate(-50%, -50%) scale(0); /* Initial hidden state */
-        transition: transform 0.3s ease; /* Smooth transition */
     }
 
 }
