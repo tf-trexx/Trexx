@@ -62,6 +62,7 @@ function showTooltip(e, button) {
         tooltip.style.left = '50%';
         tooltip.style.top = '50%';
         tooltip.style.transform = 'translate(-50%, -50%) scale(1)'; // Center the tooltip and scale up
+        tooltip.style.opacity = '1'; // Fade in
     } else {
 
     // For mouse/cursor events, use clientX and clientY
@@ -77,6 +78,15 @@ function showTooltip(e, button) {
 // Function to hide tooltip
 function hideTooltip() {
     tooltip.style.transform = 'scale(0)'; // Scale down to hide
+}
+
+// Hide tooltip function for mobile (with smoother transition)
+function hideTooltipMobile() {
+    tooltip.style.transform = 'translate(-50%, -50%) scale(0)';
+    tooltip.style.opacity = '0'; // Fade out
+    setTimeout(() => {
+        tooltip.style.display = 'none';
+    }, 600); // Longer duration for mobile smoother transition
 }
 
 // Activate blur function
