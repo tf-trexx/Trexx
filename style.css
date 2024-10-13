@@ -1,138 +1,138 @@
-const buttons = document.querySelectorAll('.grid-item');
-const tooltip = document.getElementById('tooltip');
-let isMobile = window.matchMedia("(max-width: 768px)").matches; // Simple check for mobile
-
-// Create an audio element for background music
-const backgroundMusic = new Audio('Mine.mp3'); // Replace with your MP3 file path
-backgroundMusic.preload = 'auto'; // Preload the audio
-
-// The specific button that should trigger the music
-const targetButton = "Love"; // Change this to the label of the specific button
-
-// To ensure audio can play after interaction, we attach an event listener to the document body
-document.body.addEventListener('click', () => {
-    backgroundMusic.muted = false; // Unmute the music after interaction
-}, { once: true }); // This will run only once, after first interaction (click)
-
-// This flag helps control music state
-let isMusicPlaying = false;
-
-buttons.forEach(button => {
-    // For Desktop - Mouse Hover (mouseenter and mouseleave)
-    if (!isMobile) {
-        button.addEventListener('mouseenter', (e) => {
-            if (button.innerHTML.includes(targetButton)) {
-                if (!isMusicPlaying) {
-                    backgroundMusic.currentTime = 42.3; // Start music at 0:42
-                    backgroundMusic.play(); // Play the music
-                    isMusicPlaying = true;
-                }
-            }
-            showTooltip(e, button);
-            activateBlur(); // Activate blur on hover
-        });
-
-        button.addEventListener('mouseleave', () => {
-            if (!tooltip.matches(':hover')) {
-                hideTooltip();
-                deactivateBlur(); // Deactivate blur only if not hovering over tooltip
-                if (button.innerHTML.includes(targetButton)) {
-                    backgroundMusic.pause(); // Stop the music
-                    backgroundMusic.currentTime = 42.3; // Reset the music to start position
-                    isMusicPlaying = false;
-                }
-            }
-        });
-    }
-
-    // For Mobile - Long press (touchstart and touchend)
-    if (isMobile) {
-        let pressTimer;
-
-        button.addEventListener('touchstart', (e) => {
-            pressTimer = setTimeout(() => {
-                if (button.innerHTML.includes(targetButton)) {
-                    if (!isMusicPlaying) {
-                        backgroundMusic.currentTime = 42.3; // Start music at 0:42
-                        backgroundMusic.play(); // Play the music
-                        isMusicPlaying = true;
-                    }
-                }
-                showTooltip(e, button);
-                activateBlur(); // Activate blur on press
-            }, 1000); // Long press for mobile
-        });
-
-        button.addEventListener('touchend', () => {
-            clearTimeout(pressTimer);
-            if (!tooltip.matches(':hover')) {
-                hideTooltip();
-                deactivateBlur(); // Deactivate blur when touch ends
-                if (button.innerHTML.includes(targetButton)) {
-                    backgroundMusic.pause(); // Stop the music
-                    backgroundMusic.currentTime = 42.3; // Reset the music to start position
-                    isMusicPlaying = false;
-                }
-            }
-        });
-    }
-});
-
-// Hide tooltip if mouse enters tooltip area
-tooltip.addEventListener('mouseenter', () => {
-    tooltip.style.transform = 'scale(1)'; // Keep it visible
-});
-
-// Hide tooltip and deactivate blur if mouse leaves tooltip area
-tooltip.addEventListener('mouseleave', () => {
-    hideTooltip();
-    deactivateBlur(); // Deactivate blur when mouse leaves
-    backgroundMusic.pause(); // Stop the music
-    backgroundMusic.currentTime = 42.3; // Reset the music to start position
-    isMusicPlaying = false;
-});
-
-// Function to show tooltip
-function showTooltip(e, button) {
-    tooltip.innerHTML = button.getAttribute('data-info'); // Set tooltip content using innerHTML
-    tooltip.style.display = 'flex'; // Show tooltip
-
-    // For mobile, center the tooltip
-    if (isMobile) {
-        tooltip.style.left = '50%';
-        tooltip.style.top = '50%';
-        tooltip.style.transform = 'translate(-50%, -50%) scale(1)'; // Center the tooltip and scale up
-        tooltip.style.opacity = '1'; // Fade in
-    } else {
-        // For mouse/cursor events, use clientX and clientY
-        let x = e.clientX || e.touches[0].clientX; // Handle both mouse and touch
-        let y = e.clientY || e.touches[0].clientY;
-
-        tooltip.style.left = `${Math.min(x + 10, window.innerWidth - 410)}px`; // Adjust position
-        tooltip.style.top = `${Math.min(y + 10, window.innerHeight - 410)}px`;
-        tooltip.style.transform = 'scale(1)'; // Scale up to show
-    }
+body {
+    background-color: rgb(219, 175, 138); /* Sets the background color to white */
+    margin: 0; /* Removes default margin */
+    font-family: Arial, sans-serif; /* Sets a default font */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full height of the viewport */
 }
 
-// Function to hide tooltip
-function hideTooltip() {
-    if (isMobile) {
-        tooltip.style.transform = 'translate(-50%, -50%) scale(0)'; // Scale down smoothly
-        tooltip.style.opacity = '0'; // Fade out
-        setTimeout(() => {
-            tooltip.style.display = 'none'; // After the animation ends, hide it completely
-        }, 500); // Match this time with the transition duration (0.5s)
-    } else {
-        tooltip.style.transform = 'scale(0)'; // Scale down to hide
+.grid-container {
+    display: grid; /* Use CSS grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+}
+
+.grid-item {
+    border: none; /* No border */
+    background-color: #ddbba0; /* Button background color */
+    color: rgb(255, 233, 207); /* Text color */
+    font-size: 24px; /* Reduced font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Center text in button */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    margin: 10px; /* Adds space around buttons */
+    padding: 10px; /* Adds padding inside buttons */
+    border-radius: 40px;
+    width: 80%; /* Set a fixed width */
+    height: 80%; /* Set a fixed height */
+    max-width: 40%; /* Optional: maximum width */
+    max-height: 100px; /* Optional: maximum height */
+    margin-top: 20%;
+    margin-left: 25%;
+    font-weight: bold;
+    font-style: italic;
+
+
+    /* Prevent text selection */
+    user-select: none;  /* Makes button text unselectable */
+
+
+    /* Remove blue highlight effect on mobile */
+    -webkit-tap-highlight-color: transparent;  /* For Safari and Chrome on mobile */
+
+    /* Remove focus outline */
+    outline: none;
+}
+
+.grid-item:active {
+    outline: none; /* Optionally remove outline on click */
+    
+}
+
+.grid-item:hover {
+    background-color: #d19872; /* Darker color on hover */
+}
+
+.tooltip {
+    position: absolute;
+    width: 400px; /* Width of the tooltip */
+    height: 400px; /* Height of the tooltip */
+    background-color: #fdc7944f; /* Dark background */
+    color: rgb(155, 104, 70); /* Text color */
+    border-radius: 20px; /* Curvy edges */
+    display: none; /* Hidden by default */
+    align-items: center; /* Center content */
+    justify-content: center; /* Center content */
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.7s ease-in-out; /* Smooth transition */
+    transform: scale(0); /* Start scaled down */
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    padding: 20px; /* Add padding to prevent text from touching edges */
+    text-align: center; /* Center the text */
+    word-wrap: break-word; /* Break long words */
+    line-height: 1.5; /* Adjust line height to space out text evenly */
+    overflow: hidden; /* Prevent overflow */
+    z-index: 100; /* Ensure tooltip stays above everything */
+}
+
+
+/* Blur and gradient effect */
+.blur-active {
+    position: relative; /* Needed for overlaying blur */
+}
+
+.blur-active::before {
+    content: '';
+    position: fixed; /* Cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: backdrop-filter 0.7s ease-in-out; /* Smooth transition for blur */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(10px); /* Apply the blur */
+    z-index: 99; /* Below the tooltip */
+    pointer-events: none; /* Allow interaction with the tooltip */
+}
+
+
+
+/* Media query for smaller screens (mobile devices) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Maintain 3 columns */
+        grid-template-rows: repeat(3, 1fr); /* Maintain 3 rows */
+        width: 100vw; /* Full width of viewport */
+        height: 100vh; /* Full height of viewport */
     }
+
+    .grid-item {
+        margin: 5px; /* Small margin to keep space between buttons */
+        padding: 0; /* Remove extra padding */
+        font-size: 14px; /* Adjust font size slightly */
+        border-radius: 20px; /* Rounded corners */
+        margin-left: 15%;
+        margin-top: 60%;
+        max-width: 70%;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 24px;
+        
+    }
+
+    .tooltip {
+        width: 280px; /* Adjust the width for phones */
+        height: 280px; /* Adjust the height for phones */
+        font-size: 14px; /* Make text smaller for phones */
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smoother, hardware-accelerated transition */
+    }
+
 }
 
-// Activate blur function
-function activateBlur() {
-    document.body.classList.add('blur-active'); // Add blur-active class
-}
-
-// Deactivate blur function
-function deactivateBlur() {
-    document.body.classList.remove('blur-active'); // Remove blur-active class
-}
