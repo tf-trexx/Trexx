@@ -92,6 +92,19 @@ tooltip.addEventListener('mouseleave', () => {
     isMusicPlaying = false;
 });
 
+// NEW: Hide the tooltip when clicking or tapping outside of it (Mobile only)
+if (isMobile) {
+    document.addEventListener('touchend', (e) => {
+        if (!tooltip.contains(e.target) && ![...buttons].some(button => button.contains(e.target))) {
+            hideTooltip(); // Hide the tooltip if the touch/click is outside the tooltip or buttons
+            deactivateBlur(); // Deactivate blur when clicking outside
+            backgroundMusic.pause(); // Stop the music
+            backgroundMusic.currentTime = 42.3; // Reset the music to start position
+            isMusicPlaying = false;
+        }
+    });
+}
+
 // Function to show tooltip
 function showTooltip(e, button) {
     tooltip.innerHTML = button.getAttribute('data-info'); // Set tooltip content using innerHTML
