@@ -1,23 +1,37 @@
 {
-    "name": "Docoo",
-    "short_name": "Moonyy",
-    "description": "I just wanna say.. Wait for the moment",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#d3af8efa",
-    "theme_color": "#0000ff",
-    "icons": [
-      {
-        "src": "image.png",
-        "sizes": "300x300",
-        "type": "image/png"
-      },
-      {
-        "src": "imagy.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "related_applications": [],
-    "prefer_related_applications": false
-  }
+  "name": "Docoo",
+  "short_name": "Moonyy",
+  "description": "I just wanna say.. Wait for the moment",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#d3af8efa",
+  "theme_color": "#0000ff",
+  "icons": [
+    {
+      "src": "img.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    },
+    {
+      "src": "imagy.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "s1.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide" 
+    },
+    {
+      "src": "s2.png",
+      "sizes": "392x856",
+      "type": "image/png",
+      "form_factor": "narrow" 
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
