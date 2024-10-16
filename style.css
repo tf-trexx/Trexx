@@ -136,3 +136,39 @@ body {
 
 }
 
+.sliding-box {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* Smooth sliding effect */
+    z-index: 100; /* Ensures it's above other elements */
+}
+
+@media (max-width: 768px) {
+    /* For mobile: vertical rectangular box */
+    .sliding-box {
+        width: 80%; /* Relative to screen width */
+        height: 70%; /* Relative to screen height */
+        top: 14%; /* Center vertically */
+        transform: translateX(108%); /* Start off-screen (left) */
+        border-radius: 40px;
+    }
+}
+
+@media (min-width: 769px) {
+    /* For desktop: horizontal rectangular box */
+    .sliding-box {
+        width: 65%; /* Relative to screen width */
+        height: 75%; /* Relative to screen height */
+        top: 14%; /* Center vertically */
+        transform: translateX(125%); /* Start off-screen (left) */
+        border-radius: 40px;
+       
+    }
+}
+
+/* Class to show the box in the center */
+.show-box {
+    transform: translateX(0); /* Slide it to the center */
+}
+
