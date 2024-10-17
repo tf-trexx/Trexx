@@ -1,5 +1,8 @@
 body {
-    background-color: rgb(219, 175, 138); /* Sets the background color to white */
+    background-image: url('31.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0; /* Removes default margin */
     font-family: Arial, sans-serif; /* Sets a default font */
     display: flex; /* Use flexbox for alignment */
@@ -18,8 +21,8 @@ body {
 
 .grid-item {
     border: none; /* No border */
-    background-color: #ddbba0; /* Button background color */
-    color: rgb(255, 233, 207); /* Text color */
+    background-color: #5a4134;
+    color: rgb(216, 165, 123); /* Text color */
     font-size: 24px; /* Reduced font size */
     cursor: pointer; /* Pointer cursor on hover */
     display: flex; /* Center text in button */
@@ -56,15 +59,15 @@ body {
 }
 
 .grid-item:hover {
-    background-color: #d19872; /* Darker color on hover */
+    background-color: #49311f; /* Darker color on hover */
 }
 
 .tooltip {
     position: absolute;
     width: 400px; /* Width of the tooltip */
     height: 400px; /* Height of the tooltip */
-    background-color: #fdc7944f; /* Dark background */
-    color: rgb(155, 104, 70); /* Text color */
+    background-color: #3f261457;
+    color: rgb(189, 148, 120); /* Text color */
     border-radius: 20px; /* Curvy edges */
     display: none; /* Hidden by default */
     align-items: center; /* Center content */
@@ -124,7 +127,7 @@ body {
         font-weight: bold;
         font-style: italic;
         font-size: 24px;
-        
+        background-color: #5a4134;
     }
 
     .tooltip {
@@ -132,6 +135,8 @@ body {
         height: 280px; /* Adjust the height for phones */
         font-size: 14px; /* Make text smaller for phones */
         transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smoother, hardware-accelerated transition */
+        background-color: #3f261460;
+        color: #c29977;
     }
 
 }
@@ -172,3 +177,12 @@ body {
     transform: translateX(0); /* Slide it to the center */
 }
 
+/* Background for mobile devices */
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: url('2.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
