@@ -164,11 +164,10 @@ body {
     content: "Serenity of Affection\A\AGardens of green that you have made,\ANeither from the desire, nor from the love,\AHad made my life blossoming for once,\AWas a wonderful experience, to think of it,\A It was in your hands, still is in your hands, Just a caress heart of the garden wanted, Revive my blossoming days again, would you?"; /* Replace with your actual text */
     display: flex;
     padding: 20px; /* Add padding for text */
-    font-size: 16px; /* Adjust font size if needed */
-    word-wrap: break-word;
+    font-size: 13px; /* Adjust font size if needed */
     justify-content: center;
-    line-height: 1.5;
     white-space: pre-line;
+    line-height: 1.5;
 }
 
 .sliding-box {
