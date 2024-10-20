@@ -10,9 +10,11 @@ let boxX = 0;
 function handleSwipe() {
     if (!isSwiped) {
         slidingBox.classList.add('show-box'); // Slide in
+        document.body.classList.add('slideblur'); // Apply blur
         isSwiped = true;
     } else {
         slidingBox.classList.remove('show-box'); // Slide out
+        document.body.classList.remove('slideblur'); // Remove blur
         isSwiped = false;
     }
 }
@@ -37,7 +39,7 @@ document.addEventListener('mouseup', (e) => {
 // Detect mouse position near the left edge
 document.addEventListener('mousemove', (e) => {
     if (isSwiped && e.clientX < 50) { // Check if mouse is near the left edge
-        resetBox(); // Slide out to initial position
+        handleSwipe(); // Slide out to initial position
     }
 });
 
