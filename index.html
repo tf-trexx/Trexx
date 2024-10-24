@@ -5,27 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webline</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div class="grid-container">
         <button class="grid-item" data-info="Heyy lady<br><br>I am here for telling you,<br>that you are fucking Special as always i have said earlier">Bloom</button>
         <button class="grid-item" data-info="Note for Button 2: Other info.">Glaze</button>
-        <button class="grid-item" data-info="I've done countless mistakes.. Unintentional,<br>
-but every one of them was forgiven, Sweetyy,<br>
-when I apologize everytime u may think, say<br>
-You were always the wrong guy....  alright<br>
-I legit need you if I'm wrong I try to be right<br>
-Many problems come to distance u from me<br>
-Noo but i won't give up even if u try to escape<br>
-At the end.. I wanna hear a wish  ....Till you're<br><br>MAHINN YOU FUCKING STAY CLOSE TO MEE..!!!! ">Rust</button>
+        <button class="grid-item" data-info="Note for Button 3: More details.">Rust</button>
         <button class="grid-item" data-info="Note for Button 4: Specifics for Button 4.">Pristine</button>
         <button class="grid-item" data-info="Oh Dearr Moonyy<br><br>Paragraphs were meant to store timeline,<br>
         Poems were meant to rewind you, yourself,<br>
         Crafts exist to matter the presence, of me,<br>
         Do i matter to you other than just a friend..<br>
-        You've got hundreds of stories, I got nothing<br>
-        Let me win, atleast for once if wasn't at once<br>
+        You've got hundreds of joy, I've got nothing<br>
+        Let me win, atleast for once if it wasn't at once<br>
         I love you.. Give me this, your precious lovee<br><br>Can I be worthy ya?">Love</button>
         <button class="grid-item" data-info="Note for Button 6: Instructions for Button 6.">Ethereal</button>
         <button class="grid-item" data-info="Note for Button 7: Button 7-related notes.">Firepath</button>
@@ -35,8 +27,25 @@ At the end.. I wanna hear a wish  ....Till you're<br><br>MAHINN YOU FUCKING STAY
     </div>
     </div>
     <div class="tooltip" id="tooltip"></div>
+
      <div class="sliding-box" id="slidingBox"></div>
-    <script src="script2.js"></script>
+
+    <!-- Sliding box modal -->
+    <div class="slide-box" id="slideBox">
+        <div class="box-content" id="boxContent"></div>
+    </div>
+
+    <div class="dynamic-island">
+        <div class="swipebox">
+            <input type="text" id="userGuess" placeholder="Type your guess here...">
+            <button id="submitGuess">Submit</button>
+             <div id="resultMessage"></div>
+        </div>
+      </div>
+      
+
     <script src="script.js"></script> <!-- Link to external JS file -->
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
 </body>
 </html>
