@@ -1,6 +1,7 @@
 const slidingBox = document.getElementById('slidingBox');
 let isSwiped = false; // To track if the box is swiped in
 
+
 // Variables to handle dragging
 let isDragging = false;
 let startX = 0;
@@ -56,3 +57,4 @@ slidingBox.addEventListener('touchend', (e) => {
         handleSwipe();
     }
 });
+
