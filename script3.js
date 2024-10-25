@@ -8,13 +8,13 @@ let isSwipeboxVisible = false; // To track if the Swipebox is visible
 // List of correct words for guessing
 const correctWords = [
     "cherry", "date", 
-    "I love you", "Mahin", "Orange", "I like you", 
-    "Dear", "ily", "Kiss me", "Proposal", 
-    "Marry", "Marry me", "Moon", "Buttomon", 
-    "Strawberries", "Kiss", "Relationship", "Death", 
-    "Love you", "Dear", "Darling", "Baby", 
-    "Trexx", "Trex", "Dino", "Rawr", 
-    "Us", "Videogames"
+    "i love you", "mahin", "orange", "i like you", 
+    "dear", "ily", "kiss me", "proposal", 
+    "marry", "marry me", "moon", "buttomon", 
+    "strawberries", "kiss", "relationship", "death", 
+    "love you", "dear", "darling", "baby", 
+    "trexx", "trex", "dino", "roar", 
+    "us", "videogames"
 ];
 function toggleSwipebox() {
     if (!isSwipeboxVisible) {
