@@ -6,8 +6,16 @@ const resultMessage = document.getElementById('resultMessage'); // Element to sh
 let isSwipeboxVisible = false; // To track if the Swipebox is visible
 
 // List of correct words for guessing
-const correctWords = ["apple", "banana", "cherry", "date"]; // Add your words here
-
+const correctWords = [
+    "cherry", "date", 
+    "I love you", "Mahin", "Orange", "I like you", 
+    "Dear", "ily", "Kiss me", "Proposal", 
+    "Marry", "Marry me", "Moon", "Buttomon", 
+    "Strawberries", "Kiss", "Relationship", "Death", 
+    "Love you", "Dear", "Darling", "Baby", 
+    "Trexx", "Trex", "Dino", "Rawr", 
+    "Us", "Videogames"
+];
 function toggleSwipebox() {
     if (!isSwipeboxVisible) {
         swipebox.classList.add('show-swipebox'); // Slide down into view
