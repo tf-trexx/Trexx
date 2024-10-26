@@ -288,8 +288,8 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .swipebox {
-        width: 180%;  /* Mobile-specific size (relative to screen) */
-        height: 1100%; /* Mobile-specific height */
+        width: 170%;  /* Mobile-specific size (relative to screen) */
+        height: 960%; /* Mobile-specific height */
         top: -1200%;
     }
 }
