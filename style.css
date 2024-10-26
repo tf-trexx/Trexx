@@ -366,7 +366,7 @@ body {
         cursor: pointer; /* Pointer cursor */
         transition: background-color 0.3s; /* Smooth background color change */
         position: relative;
-        top: -30px;
+        top: -20px;
     }
 
     /* Result message styles */
@@ -434,12 +434,17 @@ body {
 /* Correct response message style */
 .correct-message {
     color: rgb(255, 187, 98); /* Color for correct guesses */
+    position: relative;
+    top: -20px;
 }
 
 /* Wrong response message style */
 .wrong-message {
     color: rgb(255, 191, 154); /* Color for wrong guesses */
+    position: relative;
+    top: -20px;
 }
+
 
 /* General styling for username input and submit button */
 #username{
