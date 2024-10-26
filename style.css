@@ -262,7 +262,7 @@ body {
 
 /* Class to show the Swipebox in the center */
 .show-swipebox {
-    transform: translateX(-50%) translateY(385px); /* Slide down vertically */
+    transform: translateX(-50%) translateY(370px); /* Slide down vertically */
 }
 
 /* Class to hide the Swipebox back to the top edge */
@@ -445,7 +445,6 @@ body {
     top: -20px;
 }
 
-
 /* General styling for username input and submit button */
 #username{
     width: 100%;
@@ -528,5 +527,7 @@ body {
         border-radius: 15px;
         margin-left: 7%;
         margin-top: 10%;
+        position: relative;
+        top: 6.5px;
     }
 }
