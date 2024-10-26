@@ -272,7 +272,7 @@ body {
 
 /* Class to apply text inside the Swipebox */
 .swipebox::before {
-    content: "What would i like to hear??\A There are several things Can you guess itt?";
+    content: "What would I like to hear?? What are my likingss??\A There are several things Can you guess itt?";
     display: flex;
     padding: 20px;
     font-size: 16px;
@@ -288,8 +288,8 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .swipebox {
-        width: 160%;  /* Mobile-specific size (relative to screen) */
-        height: 900%; /* Mobile-specific height */
+        width: 180%;  /* Mobile-specific size (relative to screen) */
+        height: 1100%; /* Mobile-specific height */
         top: -1200%;
     }
 }
@@ -346,6 +346,9 @@ body {
         outline: none; /* Remove default outline */
         transition: border-color 0.3s; /* Smooth border color change */
         margin-left: 25px;
+        position: relative;
+        top: -30px;
+
     }
 
     /* Submit button styles for mobile */
@@ -354,7 +357,7 @@ body {
         height: 10%;
         width: 35%;
         background-color: #9b7a60; /* Blue background */
-        margin-top: 5%;
+        margin-top: 2%;
         margin-left: 32%;
         color: rgb(255, 209, 178); /* White text */
         border: none; /* Remove border */
@@ -362,6 +365,8 @@ body {
         font-size: 14px; /* Adjust font size for mobile */
         cursor: pointer; /* Pointer cursor */
         transition: background-color 0.3s; /* Smooth background color change */
+        position: relative;
+        top: -30px;
     }
 
     /* Result message styles */
@@ -388,6 +393,8 @@ body {
         outline: none; /* Remove default outline */
         transition: border-color 0.3s; /* Smooth border color change */
         margin-left: 18%;
+        margin-top: 2%;
+        
     }
 
     /* Submit button styles for desktop */
@@ -432,4 +439,89 @@ body {
 /* Wrong response message style */
 .wrong-message {
     color: rgb(255, 191, 154); /* Color for wrong guesses */
+}
+
+/* General styling for username input and submit button */
+#username{
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 8px 0;
+    font-size: 1rem;
+    border: 2px solid #b9e07a;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Input focus effect */
+#username:focus {
+    border-color: #eee08e; /* Darker blue on focus */
+}
+
+#submitUsername {
+    background-color: #4CAF50;
+    color: #c7ee7f;
+    cursor: pointer;
+    border: none;
+   
+}
+
+#submitUsername:hover {
+    background-color: #27812b;
+}
+
+/* Desktop-specific styling */
+@media (min-width: 768px) {
+    #submitUsername {
+        max-width: 200px;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-left: 2%;
+        border-radius: 20px;
+        margin-top: 3%;
+        font-weight: bold;
+        position: relative;
+        top: 0%;
+    }
+}
+
+/* Mobile-specific styling */
+@media (max-width: 767px) {
+    #submitUsername {
+        max-width: 90%;
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 18px;
+        margin-left: 65%;
+        font-size: 16px;
+        position: relative;
+        top: -9%;
+        
+    
+    }
+}
+
+/* Desktop-specific styling */
+@media (min-width: 768px) {
+    #username {
+        max-width: 200px;
+        padding: 15px;
+        font-size: 1.1rem;
+        margin: 10px 0;
+        margin-left: 25%;
+        border-radius: 20px;
+        
+    }
+}
+
+/* Mobile-specific styling */
+@media (max-width: 767px) {
+    #username {
+        max-width: 45%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 15px;
+        margin-left: 7%;
+        margin-top: 10%;
+    }
 }
