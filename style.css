@@ -161,13 +161,14 @@ body {
 
 /* Use the ::before pseudo-element to add text */
 .sliding-box::before {
-    content: "Serenity of Affection\A\AGardens of green that you have made,\ANeither from the desire, nor from the love,\AHad made my life blossoming for once,\AWas a wonderful experience, to think of it,\A It was in your hands, still is in your hands, Just a caress heart of the garden wanted, Revive my blossoming days again, would you?"; /* Replace with your actual text */
+    content: "Serenity of Affection\A\AGardens of green that you have made,\ANeither from the desire, nor from the love,\AHad made my life blossoming for once,\AWas a wonderful experience, to think of it,\A It was in your hands, still is in your hands, Just a caress heart of the garden wanted, Revive my blossoming days again, would you?\A\AHaaaye yaaahaa...... ya ya ya\AWaise waise pyaar se padhna yaar\AMat kar denaa vaar sidhe bola hu yaar\ANot the desi kalakaar na do hamko maar\A Aaram se padhna yaarr moodd bithake\ASunn lena phireeee phireeee.. \ANo offencee veeere veeeree.. \AJust muskuraiye dheereee dheereee.. \A Aankhe lage jaise heeree heeree\ATeri ye pagalpantiyaaan.. Dil lee gyiii\AKade aess chidhte kade aouss chidhteee\AYaar tera sukoon mein na margaaa\AKabhi milne ke baad toh tumm yaad kroogee\AMaze nhi aane par toh tumm faryaad krogee\A Deewanaa hua mastaanaa hua\A Compliment diye huye zamaanaa hua,\APyaar hua hamko par batanaa hi thaa\AKhushiyaan aapke sang bitaana hi thaa\Aheeriya heeriye maan toh jaaa\Aheeriya heeriye jaan toh jaaa\Asajnaaa tumse hi milnaa ye hai tamannaa\Akismat kabhi nhi paayi hai paayi haii\Ahaaan na jeena marnaa thoda aur ruknaa\A aur chize banayii hai banayii hai\Aohh aake mood mein sunaya bharke yaad nuu\A dekha jo aandhi meinn tera gussa yaad kruu\Akya chiz se maanungi sabse alag daatungiii, \Ahawa se uppar sochta hai tu, pagal krke marungii! \Aokay okayy! chaltaa hi jaavan koi nhi pehchavan\Apar yaad teri har pal aawaan mai... \Asamay kat jaavan dooriya aawan par tenu vaaste pyaar kadi na kat jaavan mai...\Asheeshhh 😭😭😭🤣"; /* Replace with your actual text */
     display: flex;
     padding: 20px; /* Add padding for text */
     font-size: 13px; /* Adjust font size if needed */
     justify-content: center;
     white-space: pre-line;
     line-height: 1.5;
+    overflow: auto; /* Prevent overflow */
 }
 
 .sliding-box {
