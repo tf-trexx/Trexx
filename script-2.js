@@ -1,5 +1,5 @@
 const leftSlidingBox = document.getElementById('leftSlidingBox');
-const usernameInput = document.getElementById('user');
+const user1Input = document.getElementById('user');
 const submitUserBtn = document.getElementById('submitUser');
 const diaryInput = document.getElementById('diary');
 const submitDiaryBtn = document.getElementById('submitDiary');
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Show login fields initially if no user is logged in
 function showLoginFields() {
-    usernameInput.style.display = 'block';
+    user1Input.style.display = 'block';
     submitUserBtn.style.display = 'block';
     diaryInput.style.display = 'none';
     submitDiaryBtn.style.display = 'none';
@@ -87,7 +87,7 @@ function showLoginFields() {
 
 // Submit and store username
 submitUserBtn.addEventListener('click', () => {
-    const username = usernameInput.value.trim();
+    const username = user1Input.value.trim();
     if (username) {
         localStorage.setItem('username', username);
         showWelcomeMessage(username);
@@ -98,7 +98,7 @@ submitUserBtn.addEventListener('click', () => {
 
 function showWelcomeMessage(username) {
     // Hide login fields and show diary inputs
-    usernameInput.style.display = 'none';
+    user1Input.style.display = 'none';
     submitUserBtn.style.display = 'none';
     diaryInput.style.display = 'block';
     submitDiaryBtn.style.display = 'block';
