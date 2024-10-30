@@ -161,7 +161,7 @@ body {
 
 /* Use the ::before pseudo-element to add text */
 .sliding-box::before {
-    content: "Serenity of Affection\A\AGardens of green that you have made,\ANeither from the desire, nor from the love,\AHad made my life blossoming for once,\AWas a wonderful experience, to think of it,\A It was in your hands, still is in your hands, Just a caress heart of the garden wanted, Revive my blossoming days again, would you?\A\AHaaaye yaaahaa...... ya ya ya\AWaise waise pyaar se padhna yaar\AMat kar denaa vaar sidhe bola hu yaar\ANot the desi kalakaar na do hamko maar\A Aaram se padhna yaarr moodd bithake\ASunn lena phireeee phireeee.. \ANo offencee veeere veeeree.. \AJust muskuraiye dheereee dheereee.. \A Aankhe lage jaise heeree heeree\ATeri ye pagalpantiyaaan.. Dil lee gyiii\AKade aess chidhte kade aouss chidhteee\AYaar tera sukoon mein na margaaa\AKabhi milne ke baad toh tumm yaad kroogee\AMaze nhi aane par toh tumm faryaad krogee\A Deewanaa hua mastaanaa hua\A Compliment diye huye zamaanaa hua,\APyaar hua hamko par batanaa hi thaa\AKhushiyaan aapke sang bitaana hi thaa\Aheeriya heeriye maan toh jaaa\Aheeriya heeriye jaan toh jaaa\Asajnaaa tumse hi milnaa ye hai tamannaa\Akismat kabhi nhi paayi hai paayi haii\Ahaaan na jeena marnaa thoda aur ruknaa\A aur chize banayii hai banayii hai\Aohh aake mood mein sunaya bharke yaad nuu\A dekha jo aandhi meinn tera gussa yaad kruu\Akya chiz se maanungi sabse alag daatungiii, \Ahawa se uppar sochta hai tu, pagal krke marungii! \Aokay okayy! chaltaa hi jaavan koi nhi pehchavan\Apar yaad teri har pal aawaan mai... \Asamay kat jaavan dooriya aawan par tenu vaaste pyaar kadi na kat jaavan mai...\Asheeshhh 😭😭😭🤣"; /* Replace with your actual text */
+    content: "Serenity of Affection\A\AGardens of green that you have made,\ANeither from the desire, nor from the love,\AHad made my life blossoming for once,\AWas a wonderful experience, to think of it,\A It was in your hands, still is in your hands, Just a caress heart of the garden wanted, Revive my blossoming days again, would you?\A\AHaaaye yaaahaa...... ya ya ya\AWaise waise pyaar se padhna yaar\AMat kar denaa vaar sidhe bola hu yaar\ANot the desi kalakaar na do hamko maar\A Aaram se padhna yaarr moodd bithake\ASunn lena phireeee phireeee.. \ANo offencee veeere veeeree.. \AJust muskuraiye dheereee dheereee.. \A Aankhe lage jaise heeree heeree\ATeri ye pagalpantiyaaan.. Dil lee gyiii\AKade aess chidhte kade aouss chidhteee\AYaar tera sukoon mein na margaaa\AKabhi milne ke baad toh tumm yaad kroogee\AMaze nhi aane par toh tumm faryaad krogee\A Deewanaa hua mastaanaa hua\A Compliment diye huye zamaanaa hua,\APyaar hua hamko par batanaa hi thaa\AKhushiyaan aapke sang bitaana hi thaa\Aheeriya heeriye maan toh jaaa\Aheeriya heeriye jaan toh jaaa\Asajnaaa tumse hi milnaa ye hai tamannaa\Akismat kabhi nhi paayi hai paayi haii\Ahaaan na jeena marnaa thoda aur ruknaa\A aur chize banayii hai banayii hai\Aohh aake mood mein sunaya bharke yaad nuu\A dekha jo aandhi meinn tera gussa yaad kruu\Akya chiz se manungi sabse alag pechanungi, \Ahawa se uppar sochta hai tu pagal krke marungii! \Aokay okay! chalta hi jaavan koi nhi pehchavan\Apar yaad teri har pal aawaan mai... \Asamay kat jaavan dooriya aawan par tenu vaaste pyaar kadi na kat jaavan mai...\Asheeshhh Thank you thank you"; /* Replace with your actual text */
     display: flex;
     padding: 20px; /* Add padding for text */
     font-size: 12px; /* Adjust font size if needed */
@@ -213,6 +213,152 @@ body {
 /* Class to show the box in the center */
 .show-box {
     transform: translateX(0); /* Slide it to the center */
+}
+
+/* Left-side sliding box */
+.left-sliding-box {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: #da9e51;
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* Smooth sliding effect */
+    z-index: 100; /* Ensures it's above other elements */
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    text-align: center; /* Center the text */
+    overflow: auto; /* Prevent overflow */
+    transform: translateX(-100%); /* Start off-screen on the left */
+}
+
+#user {
+    position: fixed;          /* Position it absolutely */
+    top: 90%;                  /* Distance from the top */
+    left: 10px;                 /* Distance from the left */
+    width: 63%; /* Full width minus padding */
+    padding: 10px;              /* Padding inside input */
+    border: 1px solid #ccc;     /* Add a border */
+    border-radius: 13px; 
+    z-index: 100;        /* Round the corners */
+}
+
+#submitUser {
+    position: fixed;          /* Position it absolutely */
+    top: 90%;                  /* Below the username input */
+    left: 75%;                 /* Distance from the left */
+    width: 20%;   /* Full width minus padding */
+    padding: 10px;              /* Padding inside button */
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* Remove border */
+    border-radius: 13px;        /* Round the corners */
+    cursor: pointer; 
+    z-index: 100;           /* Pointer cursor on hover */
+}
+
+#diary {
+    position: fixed;          /* Position it absolutely */
+    top: 90%;                 /* Below the submit button */
+    left: 10px;                 /* Distance from the left */
+    width: 63%;   /* Full width minus padding */
+    padding: 10px;              /* Padding inside input */
+    border: 1px solid #ccc;     /* Add a border */
+    border-radius: 13px;         /* Round the corners */
+    z-index: 100;
+}
+
+#submitDiary {
+    position: fixed;          /* Position it absolutely */
+    top: 90.5%;                 /* Below the diary input */
+    left: 75%;                 /* Distance from the left */
+    width: 20%;   /* Full width minus padding */
+    padding: 10px;              /* Padding inside button */
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* Remove border */
+    border-radius: 13px;        /* Round the corners */
+    cursor: pointer;            /* Pointer cursor on hover */
+    z-index: 100;
+    font-size: 11px;
+}
+
+#diaryNotes {
+    position: absolute;          /* Position it absolutely */
+    top: 10%;                 /* Below the submit button */
+    left: 10px;                 /* Distance from the left */
+    width: calc(100% - 20px);   /* Full width minus padding */
+}
+.diary-notes {
+    width: 90%;
+    max-height: 78%;
+    overflow-y: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 10px;
+    color: #524136;
+    margin-top: 5px;
+    text-align: right;
+    
+}
+
+/* Style for each note entry */
+.diary-note {
+    width: 90%;
+    margin: 8px 0;
+    padding: 10px;
+    background-color: #8b7c71;
+    border-radius: 13px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: sendAnimation 0.3s ease-out;
+    transition: transform 0.3s ease;
+    transform: translateY(-20px); /* Start above */
+      /* Ensure notes wrap and adjust height as needed */
+      white-space: pre-wrap;  /* Preserves whitespace and line breaks */
+      word-wrap: break-word;  /* Wrap long words */
+      height: auto;
+}
+
+.diary-note .note-content {
+    font-size: 14px;
+    color: #292119;
+    text-align: center;
+}
+
+
+
+
+/* Send animation for the note */
+@keyframes sendAnimation {
+    0% { transform: translateY(95px) scale(0.9); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Mobile styles for the left sliding box */
+@media (max-width: 768px) {
+    .left-sliding-box {
+        width: 80%; /* Relative to screen width */
+        height: 70%; /* Relative to screen height */
+        top: 14%; /* Center vertically */
+        transform: translateX(-108%); /* Start off-screen on the left */
+        border-radius: 40px;
+    }
+}
+
+/* Desktop styles for the left sliding box */
+@media (min-width: 769px) {
+    .left-sliding-box {
+        width: 65%; /* Relative to screen width */
+        height: 75%; /* Relative to screen height */
+        top: 14%; /* Center vertically */
+        transform: translateX(-125%); /* Start off-screen on the left */
+        border-radius: 40px;
+    }
+}
+
+/* Class to show the left sliding box in the center */
+.show-left-box {
+    transform: translateX(0); /* Slide to the center */
 }
 
 
@@ -276,7 +422,7 @@ body {
     content: "What would I like to hear?? What are my likingss??\A There are several things Can you guess itt?";
     display: flex;
     padding: 20px;
-    font-size: 16px;
+    font-size: 15px;
     justify-content: center;
     white-space: pre-line;
     line-height: 1.5;
