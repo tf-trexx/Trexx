@@ -5,6 +5,10 @@ const diaryInput = document.getElementById('diary');
 const submitDiaryBtn = document.getElementById('submitDiary');
 const diaryNotesContainer = document.getElementById('diaryNotes');
 let isLeftSwiped = false; // To track if the left box is swiped in
+const binId = "672bbc88acd3cb34a8a3e61a";  // Replace with your JSONbin bin ID
+const apiKey = "$2a$10$qfBYUwiGqsxbU.tfOKqG1.t/i5S5vgUcCLPaYYMbmaiH0kJuTGGSS"; // Replace with your JSONbin API key
+const jsonbinUrl = `https://api.jsonbin.io/v3/b/672bbc88acd3cb34a8a3e61a`;
+
 
 
 
@@ -74,8 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         showLoginFields();
     }
-    loadNotes();
+    loadNotesFromJSONbin(); // Load notes from JSONbin
 });
+
 
 // Show login fields initially if no user is logged in
 function showLoginFields() {
@@ -104,8 +109,8 @@ function showWelcomeMessage(username) {
     submitDiaryBtn.style.display = 'block';
 }
 
-// Submit and store diary notes
-submitDiaryBtn.addEventListener('click', () => {
+// Submit and store diary notes in JSONbin
+submitDiaryBtn.addEventListener('click', async () => {
     const noteContent = diaryInput.value.trim();
     const username = localStorage.getItem('username');
     if (noteContent && username) {
@@ -115,7 +120,7 @@ submitDiaryBtn.addEventListener('click', () => {
             date: new Date().toLocaleDateString(),
             username: username
         };
-        saveNoteToStorage(note);
+        await saveNoteToJSONbin(note);
         displayNote(note);
         diaryInput.value = ''; // Clear input
     }
@@ -142,7 +147,7 @@ function displayNote(note) {
     // Auto-remove note after 24 hours
     setTimeout(() => {
         diaryNotesContainer.removeChild(noteElement);
-        removeNoteFromStorage(note);
+        removeNoteFromJSONbin(note);
     }, 86400000); // 24 hours in milliseconds
 }
 function animateNoteSend(noteElement) {
@@ -152,22 +157,51 @@ function animateNoteSend(noteElement) {
     }, 100);
 }
 
-// Save note to local storage
-function saveNoteToStorage(note) {
-    let notes = JSON.parse(localStorage.getItem('dailyNotes')) || [];
-    notes.push(note);
-    localStorage.setItem('dailyNotes', JSON.stringify(notes));
+// Save a new note to JSONbin
+async function saveNoteToJSONbin(note) {
+    try {
+        const response = await fetch(jsonbinUrl, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+                "X-Master-Key": apiKey,
+                "X-Bin-Versioning": false
+            },
+            body: JSON.stringify({ notes: [...(await loadExistingNotes()), note] })
+        });
+        if (!response.ok) throw new Error("Failed to save note.");
+    } catch (error) {
+        console.error("Error saving note:", error);
+    }
 }
 
-// Load all saved notes
-function loadNotes() {
-    const notes = JSON.parse(localStorage.getItem('dailyNotes')) || [];
-    notes.forEach(displayNote);
+// Load notes from JSONbin
+async function loadNotesFromJSONbin() {
+    try {
+        const response = await fetch(jsonbinUrl, {
+            headers: {
+                "X-Master-Key": apiKey
+            }
+        });
+        const data = await response.json();
+        const notes = data.record.notes || [];
+        notes.forEach(displayNote);
+    } catch (error) {
+        console.error("Error loading notes:", error);
+    }
 }
 
-// Remove a note from storage
-function removeNoteFromStorage(noteToRemove) {
-    let notes = JSON.parse(localStorage.getItem('dailyNotes')) || [];
-    notes = notes.filter(note => note.content !== noteToRemove.content);
-    localStorage.setItem('dailyNotes', JSON.stringify(notes));
+// Load existing notes from JSONbin
+async function loadExistingNotes() {
+    try {
+        const response = await fetch(jsonbinUrl, {
+            headers: { "X-Master-Key": apiKey }
+        });
+        const data = await response.json();
+        return data.record.notes || [];
+    } catch (error) {
+        console.error("Error fetching existing notes:", error);
+        return [];
+    }
 }
+
