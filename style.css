@@ -66,7 +66,7 @@ body {
     position: absolute;
     width: 400px; /* Width of the tooltip */
     height: 400px; /* Height of the tooltip */
-    background-color: #3f261457;
+    background-color: #36201091;
     color: rgb(189, 148, 120); /* Text color */
     border-radius: 20px; /* Curvy edges */
     display: none; /* Hidden by default */
@@ -308,7 +308,7 @@ body {
     margin: 8px 0;
     padding: 10px;
     background-color: #8b7c71;
-    border-radius: 13px;
+    border-radius: 28px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     animation: sendAnimation 0.3s ease-out;
     transition: transform 0.3s ease;
@@ -325,7 +325,105 @@ body {
     text-align: center;
 }
 
-
+/* Desktop styles for the left sliding box */
+@media (min-width: 769px) {
+    #user {
+        position: fixed;          /* Position it absolutely */
+        top: 90%;                  /* Distance from the top */
+        left: 10px;                 /* Distance from the left */
+        width: 63%; /* Full width minus padding */
+        padding: 10px;              /* Padding inside input */
+        border: 1px solid #ccc;     /* Add a border */
+        border-radius: 13px; 
+        z-index: 100;        /* Round the corners */
+    }
+    
+    #submitUser {
+        position: fixed;          /* Position it absolutely */
+        top: 90%;                  /* Below the username input */
+        left: 75%;                 /* Distance from the left */
+        width: 20%;   /* Full width minus padding */
+        padding: 10px;              /* Padding inside button */
+        background-color: #4CAF50;  /* Green background */
+        color: white;               /* White text */
+        border: none;               /* Remove border */
+        border-radius: 13px;        /* Round the corners */
+        cursor: pointer; 
+        z-index: 100;           /* Pointer cursor on hover */
+    }
+    
+    #diary {
+        position: fixed;          /* Position it absolutely */
+        top: 92%;                 /* Below the submit button */
+        left: 40px;                 /* Distance from the left */
+        width: 63%;   /* Full width minus padding */
+        padding: 10px;              /* Padding inside input */
+        border: 1px solid #ccc;     /* Add a border */
+        border-radius: 18px;         /* Round the corners */
+        z-index: 100;
+        height: 30px;
+    }
+    
+    #submitDiary {
+        position: fixed;          /* Position it absolutely */
+        top: 92%;                 /* Below the diary input */
+        left: 70%;                 /* Distance from the left */
+        width: 20%;   /* Full width minus padding */
+        padding: 10px;              /* Padding inside button */
+        background-color: #4CAF50;  /* Green background */
+        color: white;               /* White text */
+        border: none;               /* Remove border */
+        border-radius: 18px;        /* Round the corners */
+        cursor: pointer;            /* Pointer cursor on hover */
+        z-index: 100;
+        height: 50px;
+        font-size: 14px;
+    }
+    
+    #diaryNotes {
+        position: absolute;          /* Position it absolutely */
+        top: 10%;                 /* Below the submit button */
+        left: 10px;                 /* Distance from the left */
+        width: calc(100% - 20px);   /* Full width minus padding */
+    }
+    .diary-notes {
+        width: 90%;
+        max-height: 78%;
+        overflow-y: auto;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 14px;
+        color: #3b2b21;
+        margin-top: 5px;
+        text-align: right;
+    }
+    
+    /* Style for each note entry */
+    .diary-note {
+        width: 90%;
+        position: relative;
+        left: 3%;
+        margin: 8px 0;
+        padding: 10px;
+        background-color: #8b7c71;
+        border-radius: 30px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        animation: sendAnimation 0.3s ease-out;
+        transition: transform 0.3s ease;
+        transform: translateY(-20px); /* Start above */
+          /* Ensure notes wrap and adjust height as needed */
+          white-space: pre-wrap;  /* Preserves whitespace and line breaks */
+          word-wrap: break-word;  /* Wrap long words */
+          height: auto;
+    }
+    
+    .diary-note .note-content {
+        font-size: 18px;
+        color: #292119;
+        text-align: center;
+    }
+}
 
 
 /* Send animation for the note */
@@ -389,8 +487,9 @@ body {
     color: white;
     font-size: 14px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 2000;
     transition: transform 0.5s ease; /* Smooth transition for sliding */
+    
 }
 
 /* Swipebox (Child) attached below the dynamic island */
