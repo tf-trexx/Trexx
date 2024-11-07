@@ -8,6 +8,8 @@ let isLeftSwiped = false; // To track if the left box is swiped in
 const binId = "672bbc88acd3cb34a8a3e61a";  // Replace with your JSONbin bin ID
 const apiKey = "$2a$10$qfBYUwiGqsxbU.tfOKqG1.t/i5S5vgUcCLPaYYMbmaiH0kJuTGGSS"; // Replace with your JSONbin API key
 const jsonbinUrl = `https://api.jsonbin.io/v3/b/672bbc88acd3cb34a8a3e61a`;
+localstorage.clear ();
+
 
 
 // Variables to handle dragging for the left box
@@ -68,34 +70,23 @@ leftSlidingBox.addEventListener('touchend', (e) => {
     }
 });
 
-// Check if a username is already stored
+
+// Function to run on initial page load
 document.addEventListener('DOMContentLoaded', async () => {
+    showLoginFields(); // Always show login fields for new devices
+    await loadNotesFromJSONbin(); // Load all existing notes from JSONbin
+});
+
+// Check if a username is already stored
+document.addEventListener('DOMContentLoaded', () => {
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) {
         showWelcomeMessage(storedUsername);
     } else {
         showLoginFields();
     }
-    await loadNotesFromJSONbin(); // Load notes for all users
+    loadNotesFromJSONbin(); // Load notes from JSONbin
 });
-
-async function saveUsernameToJSONbin(username) {
-    try {
-        const response = await fetch(jsonbinUrl, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json",
-                "X-Master-Key": apiKey,
-                "X-Bin-Versioning": false
-            },
-            body: JSON.stringify({ username })
-        });
-        if (!response.ok) throw new Error("Failed to save username.");
-        localStorage.setItem('username', username); // Store locally for this device
-    } catch (error) {
-        console.error("Error saving username:", error);
-    }
-}
 
 
 // Show login fields initially if no user is logged in
@@ -106,10 +97,11 @@ function showLoginFields() {
     submitDiaryBtn.style.display = 'none';
 }
 
-submitUserBtn.addEventListener('click', async () => {
+// Submit and store username
+submitUserBtn.addEventListener('click', () => {
     const username = user1Input.value.trim();
     if (username) {
-        await saveUsernameToJSONbin(username); // Save to JSONbin and locally
+        localStorage.setItem('username', username);
         showWelcomeMessage(username);
     } else {
         showLoginFields(); // This should show the input and button
@@ -200,7 +192,7 @@ async function loadNotesFromJSONbin() {
         });
         const data = await response.json();
         const notes = data.record.notes || [];
-        notes.forEach(displayNote); // Show all notes
+        notes.forEach(displayNote);
     } catch (error) {
         console.error("Error loading notes:", error);
     }
