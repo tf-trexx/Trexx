@@ -827,4 +827,30 @@ body {
         position: relative;
         top: 6.5px;
     }
+
+    /* Target iOS devices for consistent styling */
+@supports (-webkit-touch-callout: none) {
+    #submitUsername {
+        max-width: 90%; /* Adjust for iOS display */
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 18px;
+        margin-left: 65%;
+        top: -9%;
+        position: relative;
+    }
+
+    #username {
+        max-width: 45%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 15px;
+        margin-left: 7%;
+        margin-top: 10%;
+        top: 6.5px;
+        position: relative;
+    }
 }
+    
+}
+
