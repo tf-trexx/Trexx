@@ -2,6 +2,22 @@ const buttons = document.querySelectorAll('.grid-item');
 const tooltip = document.getElementById('tooltip');
 let isMobile = window.matchMedia("(max-width: 768px)").matches; // Simple check for mobile
 
+function applySafeAreaInsets() {
+    const orientation = window.screen.orientation?.type;
+
+    if (orientation?.includes('portrait')) {
+        document.documentElement.style.setProperty('--safe-top', 'env(safe-area-inset-top)');
+        document.documentElement.style.setProperty('--safe-bottom', 'env(safe-area-inset-bottom)');
+    } else {
+        document.documentElement.style.setProperty('--safe-top', '0px');
+        document.documentElement.style.setProperty('--safe-bottom', '0px');
+    }
+}
+
+// Apply on load and on orientation change
+window.addEventListener('load', applySafeAreaInsets);
+window.screen.orientation?.addEventListener('change', applySafeAreaInsets);
+
 // Create an audio element for background music
 const backgroundMusic = new Audio('Mine.mp3'); // Replace with your MP3 file path
 backgroundMusic.preload = 'auto'; // Preload the audio
