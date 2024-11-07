@@ -8,6 +8,7 @@ let isLeftSwiped = false; // To track if the left box is swiped in
 const binId = "672bbc88acd3cb34a8a3e61a";  // Replace with your JSONbin bin ID
 const apiKey = "$2a$10$qfBYUwiGqsxbU.tfOKqG1.t/i5S5vgUcCLPaYYMbmaiH0kJuTGGSS"; // Replace with your JSONbin API key
 const jsonbinUrl = `https://api.jsonbin.io/v3/b/672bbc88acd3cb34a8a3e61a`;
+localStorage.clear ();
 
 
 
@@ -28,8 +29,6 @@ function handleLeftSwipe() {
         isLeftSwiped = false;
     }
 }
-
-
 
 // Mouse swipe handling for the left box
 leftSlidingBox.addEventListener('mousedown', (e) => {
@@ -81,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadNotesFromJSONbin(); // Load notes from JSONbin
 });
 
-
 // Show login fields initially if no user is logged in
 function showLoginFields() {
     user1Input.style.display = 'block';
@@ -101,7 +99,7 @@ submitUserBtn.addEventListener('click', () => {
     }
 });
 
-function showWelcomeMessage(username) {
+function showWelcomeMessage(_username) {
     // Hide login fields and show diary inputs
     user1Input.style.display = 'none';
     submitUserBtn.style.display = 'none';
@@ -109,8 +107,8 @@ function showWelcomeMessage(username) {
     submitDiaryBtn.style.display = 'block';
 }
 
-// Submit and store diary notes in JSONbin
-submitDiaryBtn.addEventListener('click', async () => {
+// Submit and store diary notes
+submitDiaryBtn.addEventListener('click', () => {
     const noteContent = diaryInput.value.trim();
     const username = localStorage.getItem('username');
     if (noteContent && username) {
@@ -120,7 +118,7 @@ submitDiaryBtn.addEventListener('click', async () => {
             date: new Date().toLocaleDateString(),
             username: username
         };
-        await saveNoteToJSONbin(note);
+        saveNoteToJSONbin(note);
         displayNote(note);
         diaryInput.value = ''; // Clear input
     }
@@ -144,11 +142,6 @@ function displayNote(note) {
         noteElement.style.transform = 'translateY(0)'; // Move to final position
     });
 
-    // Auto-remove note after 24 hours
-    setTimeout(() => {
-        diaryNotesContainer.removeChild(noteElement);
-        removeNoteFromJSONbin(note);
-    }, 86400000); // 24 hours in milliseconds
 }
 function animateNoteSend(noteElement) {
     noteElement.style.transform = 'translateY(50px) scale(0.9)';
@@ -204,4 +197,6 @@ async function loadExistingNotes() {
         return [];
     }
 }
+
+
 
