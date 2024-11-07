@@ -8,7 +8,19 @@ body {
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    height: 100vh; /* Full height of the viewport */
+    height: 100%; /* Full height of the viewport */
+}
+
+/* Ensure elements cover the full screen behind the notch area */
+.fullscreen-element {
+    width: 100vw;
+    height: 100vh;
+    /* Support for iOS and Android fullscreen */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    box-sizing: border-box;
 }
 
 .grid-container {
