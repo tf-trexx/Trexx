@@ -70,13 +70,6 @@ leftSlidingBox.addEventListener('touchend', (e) => {
     }
 });
 
-
-// Function to run on initial page load
-document.addEventListener('DOMContentLoaded', async () => {
-    showLoginFields(); // Always show login fields for new devices
-    await loadNotesFromJSONbin(); // Load all existing notes from JSONbin
-});
-
 // Check if a username is already stored
 document.addEventListener('DOMContentLoaded', () => {
     const storedUsername = localStorage.getItem('username');
