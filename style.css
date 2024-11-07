@@ -125,6 +125,47 @@ body {
 }
 
 
+
+@media (min-width: 769px) {
+    /* Blur and gradient effect */
+.blur-active {
+    position: relative; /* Needed for overlaying blur */
+}
+
+.blur-active::before {
+    content: '';
+    position: fixed; /* Cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: backdrop-filter 0.7s ease-in-out; /* Smooth transition for blur */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(20px); /* Apply the blur */
+    z-index: 99; /* Below the tooltip */
+    pointer-events: none; /* Allow interaction with the tooltip */
+}
+
+/* Blur and gradient effect */
+.sideblur {
+    position: relative; /* Needed for overlaying blur */
+}
+
+.slideblur::before {
+    content: '';
+    position: fixed; /* Cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: backdrop-filter 0.7s ease-in-out; /* Smooth transition for blur */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(20px); /* Apply the blur */
+    z-index: 99; /* Below the tooltip */
+    pointer-events: none; /* Allow interaction with the tooltip */
+}
+}
+
 /* Media query for smaller screens (mobile devices) */
 @media (max-width: 768px) {
     .grid-container {
