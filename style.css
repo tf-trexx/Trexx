@@ -329,25 +329,27 @@ body {
 @media (min-width: 769px) {
     #user {
         position: fixed;          /* Position it absolutely */
-        top: 90%;                  /* Distance from the top */
-        left: 10px;                 /* Distance from the left */
+        top: 92%;                  /* Distance from the top */
+        left: 40px;                 /* Distance from the left */
         width: 63%; /* Full width minus padding */
         padding: 10px;              /* Padding inside input */
         border: 1px solid #ccc;     /* Add a border */
-        border-radius: 13px; 
+        border-radius: 18px; 
         z-index: 100;        /* Round the corners */
+        height: 30px;
     }
     
     #submitUser {
         position: fixed;          /* Position it absolutely */
-        top: 90%;                  /* Below the username input */
-        left: 75%;                 /* Distance from the left */
+        top: 92%;                 /* Below the diary input */
+        left: 70%;                 /* Distance from the left */
         width: 20%;   /* Full width minus padding */
         padding: 10px;              /* Padding inside button */
         background-color: #4CAF50;  /* Green background */
         color: white;               /* White text */
         border: none;               /* Remove border */
-        border-radius: 13px;        /* Round the corners */
+        border-radius: 18px;        /* Round the corners */
+        height: 50px;
         cursor: pointer; 
         z-index: 100;           /* Pointer cursor on hover */
     }
