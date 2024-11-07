@@ -8,7 +8,7 @@ let isLeftSwiped = false; // To track if the left box is swiped in
 const binId = "672bbc88acd3cb34a8a3e61a";  // Replace with your JSONbin bin ID
 const apiKey = "$2a$10$qfBYUwiGqsxbU.tfOKqG1.t/i5S5vgUcCLPaYYMbmaiH0kJuTGGSS"; // Replace with your JSONbin API key
 const jsonbinUrl = `https://api.jsonbin.io/v3/b/672bbc88acd3cb34a8a3e61a`;
-localStorage.clear ();
+
 
 
 
