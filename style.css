@@ -240,6 +240,9 @@ body {
     border: 1px solid #ccc;     /* Add a border */
     border-radius: 13px; 
     z-index: 100;        /* Round the corners */
+    background-color: #1f1f1f6e;
+    color: #cab99f;
+   
 }
 
 #submitUser {
@@ -248,12 +251,14 @@ body {
     left: 75%;                 /* Distance from the left */
     width: 20%;   /* Full width minus padding */
     padding: 10px;              /* Padding inside button */
-    background-color: #4CAF50;  /* Green background */
-    color: white;               /* White text */
+    background-color: #dab79a;  /* Green background */
+    color: #1f1f1fdc;               /* White text */
     border: none;               /* Remove border */
     border-radius: 13px;        /* Round the corners */
     cursor: pointer; 
     z-index: 100;           /* Pointer cursor on hover */
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #diary {
@@ -265,6 +270,8 @@ body {
     border: 1px solid #ccc;     /* Add a border */
     border-radius: 13px;         /* Round the corners */
     z-index: 100;
+    background-color: #1f1f1f6e;
+    color: #cab99f;
 }
 
 #submitDiary {
@@ -273,13 +280,15 @@ body {
     left: 75%;                 /* Distance from the left */
     width: 20%;   /* Full width minus padding */
     padding: 10px;              /* Padding inside button */
-    background-color: #4CAF50;  /* Green background */
-    color: white;               /* White text */
+    background-color: #dab79a;  /* Green background */
+    color: #1f1f1fdc;                /* White text */
     border: none;               /* Remove border */
     border-radius: 13px;        /* Round the corners */
     cursor: pointer;            /* Pointer cursor on hover */
     z-index: 100;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: bold
+    
 }
 
 #diaryNotes {
@@ -337,6 +346,7 @@ body {
         border-radius: 18px; 
         z-index: 100;        /* Round the corners */
         height: 30px;
+       
     }
     
     #submitUser {
@@ -344,9 +354,6 @@ body {
         top: 92%;                 /* Below the diary input */
         left: 70%;                 /* Distance from the left */
         width: 20%;   /* Full width minus padding */
-        padding: 10px;              /* Padding inside button */
-        background-color: #4CAF50;  /* Green background */
-        color: white;               /* White text */
         border: none;               /* Remove border */
         border-radius: 18px;        /* Round the corners */
         height: 50px;
@@ -372,8 +379,6 @@ body {
         left: 70%;                 /* Distance from the left */
         width: 20%;   /* Full width minus padding */
         padding: 10px;              /* Padding inside button */
-        background-color: #4CAF50;  /* Green background */
-        color: white;               /* White text */
         border: none;               /* Remove border */
         border-radius: 18px;        /* Round the corners */
         cursor: pointer;            /* Pointer cursor on hover */
