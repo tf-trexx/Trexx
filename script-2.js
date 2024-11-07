@@ -5,9 +5,9 @@ const diaryInput = document.getElementById('diary');
 const submitDiaryBtn = document.getElementById('submitDiary');
 const diaryNotesContainer = document.getElementById('diaryNotes');
 let isLeftSwiped = false; // To track if the left box is swiped in
-const binId = "672a66abe41b4d34e44f01e4";  // Replace with your JSONbin bin ID
+const binId = "672bbc88acd3cb34a8a3e61a";  // Replace with your JSONbin bin ID
 const apiKey = "$2a$10$qfBYUwiGqsxbU.tfOKqG1.t/i5S5vgUcCLPaYYMbmaiH0kJuTGGSS"; // Replace with your JSONbin API key
-const jsonbinUrl = `https://api.jsonbin.io/v3/b/672a66abe41b4d34e44f01e4`;
+const jsonbinUrl = `https://api.jsonbin.io/v3/b/672bbc88acd3cb34a8a3e61a`;
 
 
 // Variables to handle dragging for the left box
