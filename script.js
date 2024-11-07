@@ -14,6 +14,17 @@ function applySafeAreaInsets() {
     }
 }
 
+function enableFullScreen() {
+    // Adjust viewport for fullscreen compatibility
+    document.documentElement.style.height = '100vh';
+
+    // Forcing an initial layout
+    window.addEventListener('resize', () => {
+        document.documentElement.style.height = `${window.innerHeight}px`;
+    });
+}
+
+enableFullScreen();
 // Apply on load and on orientation change
 window.addEventListener('load', applySafeAreaInsets);
 window.screen.orientation?.addEventListener('change', applySafeAreaInsets);
