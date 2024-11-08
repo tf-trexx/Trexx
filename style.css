@@ -8,8 +8,7 @@ body {
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    height: 100%; /* Full height of the viewport */
-    overflow: hidden;
+    height: 100vh; /* Full height of the viewport */
 }
 
 .grid-container {
@@ -179,14 +178,13 @@ body {
     .grid-item {
         margin: 5px; /* Small margin to keep space between buttons */
         padding: 0; /* Remove extra padding */
-        font-size: 14px; /* Adjust font size slightly */
-        border-radius: 20px; /* Rounded corners */
+        font-size: 19px; /* Adjust font size slightly */
+        border-radius: 35px; /* Rounded corners */
         margin-left: 15%;
         margin-top: 60%;
         max-width: 70%;
         font-weight: bold;
         font-style: italic;
-        font-size: 24px;
         background-color: #5a4134;
     }
 
@@ -282,7 +280,7 @@ body {
     border: 1px solid #ccc;     /* Add a border */
     border-radius: 13px; 
     z-index: 100;        /* Round the corners */
-    background-color: #1f1f1f6e;
+    background-color: rgb(43, 37, 30);
     color: #cab99f;
    
 }
@@ -312,7 +310,7 @@ body {
     border: 1px solid #ccc;     /* Add a border */
     border-radius: 13px;         /* Round the corners */
     z-index: 100;
-    background-color: #1f1f1f6e;
+    background-color: rgb(43, 37, 30);
     color: #cab99f;
 }
 
@@ -553,6 +551,8 @@ body {
     border-radius: 40px;
     z-index: 999;
     transition: transform 0.5s ease; /* Smooth transition for sliding */
+    user-select: none;  /* Makes button text unselectable */
+    
 }
 
 /* Class to show the Swipebox in the center */
@@ -595,6 +595,7 @@ body {
         width: 300%;  /* Desktop-specific width */
         height: 1000%; /* Desktop-specific height */
         top: -1200%;  /* Start off-screen */
+        border-radius: 90px;
 
     }
 }
