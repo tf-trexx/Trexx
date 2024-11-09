@@ -10,6 +10,41 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
+    <div class="icon-tray">
+        <!-- First icon triggers the modal -->
+        <div class="icon" onclick="openFeature()"><img src="img1.png" alt="F1"></div>
+        <div class="icon"><img src="icon2.png" alt="soon"></div>
+        <div class="icon"><img src="icon3.png" alt="soon"></div>
+        <div class="icon"><img src="icon4.png" alt="soon"></div>
+    </div>
+    
+  <!-- Modal structure -->
+<div id="featureBox" class="modal">
+    <div class="modal-content">
+        <div class="content-wrapper">
+            <div class="image-list">
+                <div class="item">
+                    <img src="the1.jpeg" alt="Image 1">
+                    <p>Text for Image 1</p>
+                </div>
+                <div class="item">
+                    <img src="the2.jpeg" alt="Image 2">
+                    <p>Text for Image 2</p>
+                </div>
+                <div class="item">
+                    <img src="the3.jpeg" alt="Image 3">
+                    <p>Text for Image 3</p>
+                </div>
+                <div class="item">
+                    <img src="the4.jpeg" alt="Image 3">
+                    <p>Text for Image 3</p>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+    </div>
+</div>
+    
     <div class="grid-container">
         <button class="grid-item" data-info="Heyy lady<br><br>I am here for telling you,<br>that you are fucking Special as always i have said earlier">Bloom</button>
         <button class="grid-item" data-info="Note for Button 2: Other info.">Glaze</button>
@@ -82,5 +117,6 @@ Is still, Think about it or.. 'Dekhte hai' shh! ">Skyy</button>
     <script src="script2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script3.js"></script>
+    <script src="scripticon.js"></script>
 </body>
 </html>
