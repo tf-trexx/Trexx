@@ -618,7 +618,6 @@ body {
         width: 200px;
         height: 55px;
         background-color: #0000009d;
-        backdrop-filter: blur(6px);
         border-radius: 40px;
         display: flex;
         justify-content: center;
