@@ -1,5 +1,5 @@
 body {
-    background-image: url('31.jpeg');
+    background-image: url('the2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,8 +21,9 @@ body {
 
 .grid-item {
     border: none; /* No border */
-    background-color: #5a4134;
-    color: rgb(216, 165, 123); /* Text color */
+    background: rgba(82, 82, 82, 0.438);
+    backdrop-filter: blur(10px);
+    color: #f3f3f3;
     font-size: 24px; /* Reduced font size */
     cursor: pointer; /* Pointer cursor on hover */
     display: flex; /* Center text in button */
@@ -59,15 +60,15 @@ body {
 }
 
 .grid-item:hover {
-    background-color: #27150f; /* Darker color on hover */
+    background-color: #3b3b3b; /* Darker color on hover */
 }
 
 .tooltip {
     position: absolute;
     width: 400px; /* Width of the tooltip */
     height: 400px; /* Height of the tooltip */
-    background-color: #36201091;
-    color: rgb(189, 148, 120); /* Text color */
+    background-color: #bbb9b93b;
+    color: #1d1d1d;
     border-radius: 20px; /* Curvy edges */
     display: none; /* Hidden by default */
     align-items: center; /* Center content */
@@ -185,7 +186,9 @@ body {
         max-width: 70%;
         font-weight: bold;
         font-style: italic;
-        background-color: #5a4134;
+        background: rgba(112, 112, 112, 0.315);
+        backdrop-filter: blur(10px);
+        color: #f3f3f3;
     }
 
     .tooltip {
@@ -193,8 +196,8 @@ body {
         height: 280px; /* Adjust the height for phones */
         font-size: 14px; /* Make text smaller for phones */
         transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smoother, hardware-accelerated transition */
-        background-color: #3f261460;
-        color: #c29977;
+        background-color: #bbb9b93b;
+        color: #303030;
     }
 
 }
@@ -213,8 +216,8 @@ body {
 
 .sliding-box {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-    color: #da9e51;
+    background-color: rgba(116, 116, 116, 0.61); /* Semi-transparent black */
+    color: #252525;
     border-radius: 10px;
     transition: transform 0.5s ease; /* Smooth sliding effect */
     z-index: 100; /* Ensures it's above other elements */
@@ -258,8 +261,8 @@ body {
 /* Left-side sliding box */
 .left-sliding-box {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-    color: #da9e51;
+    background-color: rgba(116, 116, 116, 0.61); /* Semi-transparent black */
+    color: #252525;
     border-radius: 10px;
     transition: transform 0.5s ease; /* Smooth sliding effect */
     z-index: 100; /* Ensures it's above other elements */
@@ -280,8 +283,8 @@ body {
     border: 1px solid #ccc;     /* Add a border */
     border-radius: 13px; 
     z-index: 100;        /* Round the corners */
-    background-color: rgb(43, 37, 30);
-    color: #cab99f;
+    background-color: rgb(87, 87, 87);
+    color: #0e0e0e;
    
 }
 
@@ -291,8 +294,8 @@ body {
     left: 75%;                 /* Distance from the left */
     width: 20%;   /* Full width minus padding */
     padding: 10px;              /* Padding inside button */
-    background-color: #dab79a;  /* Green background */
-    color: #1f1f1fdc;               /* White text */
+    background-color: #383838;  /* Green background */
+    color: #777777dc; ;               /* White text */
     border: none;               /* Remove border */
     border-radius: 13px;        /* Round the corners */
     cursor: pointer; 
@@ -310,8 +313,8 @@ body {
     border: 1px solid #ccc;     /* Add a border */
     border-radius: 13px;         /* Round the corners */
     z-index: 100;
-    background-color: rgb(43, 37, 30);
-    color: #cab99f;
+    background-color: rgb(87, 87, 87);
+    color: #0e0e0e;
 }
 
 #submitDiary {
@@ -320,8 +323,8 @@ body {
     left: 75%;                 /* Distance from the left */
     width: 20%;   /* Full width minus padding */
     padding: 10px;              /* Padding inside button */
-    background-color: #dab79a;  /* Green background */
-    color: #1f1f1fdc;                /* White text */
+    background-color: #383838;  /* Green background */
+    color: #777777dc;                /* White text */
     border: none;               /* Remove border */
     border-radius: 13px;        /* Round the corners */
     cursor: pointer;            /* Pointer cursor on hover */
@@ -345,7 +348,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     font-size: 10px;
-    color: #524136;
+    color: #414141;
     margin-top: 5px;
     text-align: right;
     
@@ -356,7 +359,7 @@ body {
     width: 90%;
     margin: 8px 0;
     padding: 10px;
-    background-color: #8b7c71;
+    background-color: #bbbbbb;
     border-radius: 28px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     animation: sendAnimation 0.3s ease-out;
@@ -370,7 +373,7 @@ body {
 
 .diary-note .note-content {
     font-size: 14px;
-    color: #292119;
+    color: #161616;
     text-align: center;
 }
 
@@ -441,7 +444,7 @@ body {
         display: flex;
         flex-direction: column-reverse;
         font-size: 14px;
-        color: #3b2b21;
+        color: #414141;
         margin-top: 5px;
         text-align: right;
     }
@@ -453,7 +456,7 @@ body {
         left: 3%;
         margin: 8px 0;
         padding: 10px;
-        background-color: #8b7c71;
+        background-color: #bbbbbb;
         border-radius: 30px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         animation: sendAnimation 0.3s ease-out;
@@ -467,7 +470,7 @@ body {
     
     .diary-note .note-content {
         font-size: 18px;
-        color: #292119;
+        color: #161616;
         text-align: center;
     }
 }
@@ -525,8 +528,9 @@ body {
     left: 48.5%; /* Center horizontally */
     transform: translateX(-50%); /* This centers it horizontally */
     width: 350px;
-    height: 60px;
+    height: 70px;
     background-color: #0000009d;
+    backdrop-filter: blur(10px);
     border-radius: 40px;
     display: flex;
     justify-content: center;
@@ -547,7 +551,7 @@ body {
     transform: translateX(-50%); /* Ensure it's centered horizontally */
     width: 350px; /* Width of Swipebox */
     height: 600px; /* Height of Swipebox */
-    background-color: #1a1511;
+    background-color: #222222;
     border-radius: 40px;
     z-index: 999;
     transition: transform 0.5s ease; /* Smooth transition for sliding */
@@ -574,7 +578,7 @@ body {
     justify-content: center;
     white-space: pre-line;
     line-height: 1.5;
-    color: #d1b080;
+    color: #7a7a7a;
     font-style: italic;
     font-weight: bold;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -616,6 +620,7 @@ body {
         width: 200px;
         height: 55px;
         background-color: #0000009d;
+        backdrop-filter: blur(10px);
         border-radius: 40px;
         display: flex;
         justify-content: center;
@@ -636,7 +641,7 @@ body {
         height: 5%;
         padding: 10px; /* Padding inside the input */
         margin: 10px 0; /* Margin for spacing */
-        border: 2px solid #dab79a; /* Blue border */
+        border: 2px solid #686868; /* Blue border */
         border-radius: 15px; /* Rounded corners */
         font-size: 14px; /* Adjust font size for mobile */
         outline: none; /* Remove default outline */
@@ -644,7 +649,8 @@ body {
         margin-left: 25px;
         position: relative;
         top: -30px;
-        background-color: rgb(43, 37, 30);
+        background-color: #363636; /* Blue background */
+        color: rgb(100, 100, 100); /* White text */
 
     }
 
@@ -653,10 +659,10 @@ body {
         padding: 10px 20px; /* Padding inside the button */
         height: 10%;
         width: 35%;
-        background-color: #9b7a60; /* Blue background */
+        background-color: #363636; /* Blue background */
+        color: rgb(100, 100, 100); /* White text */
         margin-top: 2%;
         margin-left: 32%;
-        color: rgb(255, 209, 178); /* White text */
         border: none; /* Remove border */
         border-radius: 20px; /* Rounded corners */
         font-size: 14px; /* Adjust font size for mobile */
@@ -684,23 +690,24 @@ body {
         width: 40%; /* Wider input field on desktop */
         padding: 15px; /* More padding */
         margin: 10px 0; /* Margin for spacing */
-        border: 2px solid #dab79a; /* Blue border */
+        border: 2px solid #444444; /* Blue border */
         border-radius: 15px; /* Rounded corners */
         font-size: 16px; /* Larger text for desktop */
         outline: none; /* Remove default outline */
         transition: border-color 0.3s; /* Smooth border color change */
         margin-left: 18%;
         margin-top: 2%;
-        background-color: rgb(43, 37, 30);
+        background-color: #363636; /* Blue background */
+        color: rgb(100, 100, 100); /* White text */
         
     }
 
     /* Submit button styles for desktop */
     #submitGuess {
-        padding: 15px 30px; /* More padding for desktop */
-        background-color: #9b7a60; /* Blue background */
+        padding: 15px 30px; /* More padding for desktop */      
         font-weight: bold;
-        color: rgb(255, 209, 178); /* White text */
+        background-color: #363636; /* Blue background */
+        color: rgb(100, 100, 100); /* White text */
         border: none; /* Remove border */
         border-radius: 15px; /* Rounded corners */
         font-size: 16px; /* Larger text for desktop */
@@ -712,12 +719,12 @@ body {
 
 /* Input focus effect */
 #userGuess:focus {
-    border-color: #d48d8d; /* Darker blue on focus */
+    border-color: #d3d3d3; /* Darker blue on focus */
 }
 
 /* Submit button hover effect */
 #submitGuess:hover {
-    background-color: #664e43; /* Darker blue on hover */
+    background-color: #3d3d3d; /* Darker blue on hover */
 }
 
 /* Result message styles */
@@ -750,27 +757,28 @@ body {
     padding: 12px;
     margin: 8px 0;
     font-size: 1rem;
-    border: 2px solid #dab79a;
+    border: 2px solid #4b4b4b;
     border-radius: 5px;
     outline: none;
-    background-color: rgb(43, 37, 30);
+    background-color: #363636; /* Blue background */
+    color: rgb(100, 100, 100); /* White text */
 }
 
 /* Input focus effect */
 #username:focus {
-    border-color: #eee08e; /* Darker blue on focus */
+    border-color: #bebebe; /* Darker blue on focus */
 }
 
 #submitUsername {
-    background-color: #9b7a60;
-    color: rgb(255, 209, 178);
+    background-color: #363636; /* Blue background */
+    color: rgb(100, 100, 100); /* White text */
     cursor: pointer;
     border: none;
    
 }
 
 #submitUsername:hover {
-    background-color: #615140;
+    background-color: #4d4d4d;
 }
 
 /* Desktop-specific styling */
@@ -868,7 +876,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.815);
+    box-shadow: 0 4px 12px rgba(51, 51, 51, 0.815);
     padding: 0 10px;
     
 }
@@ -962,7 +970,7 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.932);
+        box-shadow: 0 4px 12px rgba(51, 51, 51, 0.815);
         padding: 0 10px;
         
     }
