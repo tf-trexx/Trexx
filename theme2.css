@@ -21,8 +21,7 @@ body {
 
 .grid-item {
     border: none; /* No border */
-    background: rgba(82, 82, 82, 0.438);
-    backdrop-filter: blur(10px);
+    background: rgba(105, 105, 105, 0.692);
     color: #f3f3f3;
     font-size: 24px; /* Reduced font size */
     cursor: pointer; /* Pointer cursor on hover */
@@ -186,8 +185,7 @@ body {
         max-width: 70%;
         font-weight: bold;
         font-style: italic;
-        background: rgba(112, 112, 112, 0.315);
-        backdrop-filter: blur(10px);
+        background: rgba(139, 139, 139, 0.425);
         color: #f3f3f3;
     }
 
@@ -490,6 +488,7 @@ body {
         top: 14%; /* Center vertically */
         transform: translateX(-108%); /* Start off-screen on the left */
         border-radius: 40px;
+        will-change: transform, opacity;
     }
 }
 
@@ -530,7 +529,6 @@ body {
     width: 350px;
     height: 70px;
     background-color: #0000009d;
-    backdrop-filter: blur(10px);
     border-radius: 40px;
     display: flex;
     justify-content: center;
@@ -620,7 +618,7 @@ body {
         width: 200px;
         height: 55px;
         background-color: #0000009d;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(6px);
         border-radius: 40px;
         display: flex;
         justify-content: center;
