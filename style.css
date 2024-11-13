@@ -1050,6 +1050,7 @@ body {
     to {opacity: 1; transform: scale(1);}
 }
 
+
 /* Fullscreen overlay styling */
 .fullscreen-overlay {
     display: none; /* Hidden by default */
@@ -1144,4 +1145,5 @@ body {
     height: 100%;
     cursor: crosshair;
 }
+
 
