@@ -1,40 +1,55 @@
-// Brush settings
 let brushSize = 5;
 let brushColor = "#000000";
-
-// Canvas setup
 const canvas = document.getElementById("drawingCanvas");
 const ctx = canvas.getContext("2d");
+const centerBox = document.querySelector(".center-box");
 
-// Adjust canvas size to match center box size
-function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+// History arrays for undo and redo functionality
+let history = [];
+let redoStack = [];
+
+// Function to resize the canvas to match the center box size
+function resizeCanvasToCenterBox() {
+    // Get the dimensions of the center box
+    const boxWidth = centerBox.clientWidth;
+    const boxHeight = centerBox.clientHeight;
+
+    // Set the canvas width and height to match the center box
+    canvas.width = boxWidth;
+    canvas.height = boxHeight;
+
+    // Redraw or adjust canvas contents here if needed
 }
-resizeCanvas();
 
-// Redraw canvas on resize to fit center box
-window.addEventListener("resize", resizeCanvas);
+// Call resize function initially and on window resize
+resizeCanvasToCenterBox();
+window.addEventListener("resize", resizeCanvasToCenterBox);
 
-// Drawing state
-let isDrawing = false;
-let lastX = 0;
-let lastY = 0;
+// Redraw existing drawings (optional - for when resizing dynamically with saved history)
+function redrawCanvas() {
+    if (history.length > 0) {
+        restoreState(history[history.length - 1]);
+    }
+}
 
-// Start drawing (for both mouse and touch)
+// Re-run resizeCanvasToCenterBox() whenever the center box dimensions change dynamically
+new ResizeObserver(resizeCanvasToCenterBox).observe(centerBox);
+
+// Start drawing
 function startDrawing(e) {
     isDrawing = true;
     const { offsetX, offsetY } = getEventPosition(e);
     [lastX, lastY] = [offsetX, offsetY];
+    saveState(); // Save state on new action
 }
 
 // Stop drawing
 function stopDrawing() {
     isDrawing = false;
-    ctx.beginPath(); // Reset path for smoother lines
+    ctx.beginPath();
 }
 
-// Draw continuous line (for both mouse and touch)
+// Draw continuous line
 function draw(e) {
     if (!isDrawing) return;
     const { offsetX, offsetY } = getEventPosition(e);
@@ -44,14 +59,35 @@ function draw(e) {
     ctx.strokeStyle = brushColor;
 
     ctx.beginPath();
-    ctx.moveTo(lastX, lastY); // Start from the last position
-    ctx.lineTo(offsetX, offsetY); // Draw to the current position
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(offsetX, offsetY);
     ctx.stroke();
 
-    [lastX, lastY] = [offsetX, offsetY]; // Update last position
+    [lastX, lastY] = [offsetX, offsetY];
 }
 
-// Helper function to get the position for both mouse and touch events
+// Undo last action
+function undoAction() {
+    if (history.length > 0) {
+        redoStack.push(history.pop()); // Move last state to redo stack
+        if (history.length > 0) {
+            restoreState(history[history.length - 1]);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas if no more history
+        }
+    }
+}
+
+// Redo last undone action
+function redoAction() {
+    if (redoStack.length > 0) {
+        const redoState = redoStack.pop();
+        history.push(redoState); // Add back to history
+        restoreState(redoState);
+    }
+}
+
+// Helper function for getting event position for both mouse and touch
 function getEventPosition(e) {
     if (e.touches) {
         const rect = canvas.getBoundingClientRect();
