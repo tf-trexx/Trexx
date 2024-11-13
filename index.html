@@ -57,16 +57,18 @@
  
 <div id="fullScreenOverlay" class="fullscreen-overlay">
     <div class="center-box">
-        <h2>Share the work!</h2>
         <canvas id="drawingCanvas"></canvas>
         <img src="close.png" alt="Close" class="close-icon" onclick="closeFullScreenOverlay()">
+        <img src="undo.png" alt="Undo" class="action-icon" id="undoButton" onclick="undoAction()">
+        <img src="redo.png" alt="Redo" class="action-icon" id="redoButton" onclick="redoAction()">
+        
     </div>
     <div class="icon-draw">
         <!-- First icon triggers the modal -->
         <div class="draw" onclick="toggleBrushSettings()"><img src="img2.png" alt="Brush"></div>
-        <div class="draw"><img src="icon" alt="soon"></div>
-        <div class="draw"><img src="icon3.png" alt="soon"></div>
-        <div class="draw"><img src="icon4.png" alt="soon"></div>
+        <div class="draw"><img src="shape.png" alt="soon"></div>
+        <div class="draw"><img src="bucket.png" alt="soon"></div>
+        <div class="draw"><img src="eraser.png" alt="soon"></div>
     </div>
         <!-- Brush settings pop-up -->
         <div id="brushSettings" class="brush-settings">
