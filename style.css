@@ -1146,4 +1146,18 @@ body {
     cursor: crosshair;
 }
 
+.action-icon {
+    position: absolute;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
 
+#undoButton {
+    right: 55px; /* Position to the right of the center box */
+}
+
+#redoButton {
+    right: 25px; /* Position to the right of the center box */
+}
