@@ -1161,3 +1161,28 @@ body {
 #redoButton {
     right: 25px; /* Position to the right of the center box */
 }
+
+.shape-selection {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    flex-direction: column;
+}
+.shape-overlay {
+    position: absolute;
+    border: 2px dashed #000; /* Outline appearance */
+    cursor: move;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+}
+
+.hidden {
+    display: none;
+}
