@@ -10,9 +10,10 @@ function openFeature() {
         }
     });
 }
-// Function to close the modal
-function closeFeature() {
-    document.getElementById("featureBox").style.display = "none";
+
+// Function to open the full-screen overlay
+function openFullScreenOverlay() {
+    document.getElementById("fullScreenOverlay").style.display = "block";
 }
 
 
@@ -31,3 +32,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("theme-link").href = savedTheme;
     }
 });
+
+
+// Function to close the modal
+function closeFeature() {
+    document.getElementById("featureBox").style.display = "none";
+}
+
+// Function to close the full-screen overlay
+function closeFullScreenOverlay() {
+    document.getElementById("fullScreenOverlay").style.display = "none";
+}
