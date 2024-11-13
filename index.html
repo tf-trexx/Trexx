@@ -58,6 +58,9 @@
 <div id="fullScreenOverlay" class="fullscreen-overlay">
     <div class="center-box">
         <canvas id="drawingCanvas"></canvas>
+        <div id="shapeOverlay" class="shape-overlay hidden">
+            <!-- This overlay will act as an interactive outline -->
+        </div>
         <img src="close.png" alt="Close" class="close-icon" onclick="closeFullScreenOverlay()">
         <img src="undo.png" alt="Undo" class="action-icon" id="undoButton" onclick="undoAction()">
         <img src="redo.png" alt="Redo" class="action-icon" id="redoButton" onclick="redoAction()">
@@ -66,18 +69,39 @@
     <div class="icon-draw">
         <!-- First icon triggers the modal -->
         <div class="draw" onclick="toggleBrushSettings()"><img src="img2.png" alt="Brush"></div>
-        <div class="draw"><img src="shape.png" alt="soon"></div>
+        <div class="draw" onclick="startShapePlacement()"><img src="shape.png" alt="soon"></div>
         <div class="draw"><img src="bucket.png" alt="soon"></div>
         <div class="draw"><img src="eraser.png" alt="soon"></div>
     </div>
         <!-- Brush settings pop-up -->
         <div id="brushSettings" class="brush-settings">
             <label>Brush Size:</label>
-            <input type="range" id="brushSize" min="1" max="50" value="5">
+            <input type="range" id="brushSize" min="1" max="100" value="5">
     
             <label>Brush Color:</label>
             <input type="color" id="brushColor" value="#000000">
+
+            <label>Opacity</label>
+            <input type="range" id="brushOpacity" min="0.1" max="1" step="0.1" value="1">
+
+            <label>Hardness</label>
+            <input type="range" id="brushHardness" min="0" max="1" step="0.1" value="1">
+
+            <label>Texture</label>
+            <input type="range" id="brushTexture" min="0" max="1" step="0.1" value="0">
         </div>
+        <!-- Shape selection pop-up -->
+<div id="shapeSelection" class="shape-selection">
+    <label>Select Shape:</label>
+    <select id="shapeType">
+        <option value="circle">Circle</option>
+        <option value="square">Square</option>
+        <option value="triangle">Triangle</option>
+        <option value="star">Star</option>
+        <!-- Add more shapes if needed -->
+    </select>
+
+</div>
 </div>
     
     <div class="grid-container">
@@ -153,6 +177,7 @@ Is still, Think about it or.. 'Dekhte hai' shh! ">Skyy</button>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script3.js"></script>
     <script src="drawing.js"></script>
+    <script src="shape.js"></script>
     <script src="scripticon.js"></script>
 </body>
 </html>
