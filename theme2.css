@@ -1054,3 +1054,147 @@ body {
     from {opacity: 0; transform: scale(0.9);}
     to {opacity: 1; transform: scale(1);}
 }
+
+/* Fullscreen overlay styling */
+.fullscreen-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(201, 156, 127); /* Full white background */
+    z-index: 1000; /* Higher than other elements */
+}
+
+/* Centered square box inside the overlay */
+.center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 500px;
+    background-color: #daaa7e;
+    border-radius: 35px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    color: #ffc793;
+}
+
+/* Style for the close icon in the overlay */
+.close-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 24px; /* Adjust the size as needed */
+    height: 24px;
+    cursor: pointer;
+    z-index: 1010; /* Ensure it’s above other elements in the overlay */
+}
+
+
+.icon-draw {
+    position: fixed;
+    top: 92%;
+    width: 80%;
+    max-width: 400px;
+    height: 50px;
+    background: radial-gradient(circle rgba(255, 255, 255, 0.096), rgba(0, 0, 0, 0.6));
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.815);
+    padding: 0 10px;
+    left: 7.5%;
+    
+}
+
+.draw img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.draw img:hover {
+    transform: scale(1.1);
+}
+
+
+.brush-settings {
+    position: absolute;
+    bottom: 70px; /* Adjust to sit above the tray */
+    left: 20px;
+    padding: 10px;
+    background-color: rgba(235, 188, 157, 0.534);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.39);
+    border-radius: 18px;
+    display: none;
+    z-index: 1006;
+}
+
+.brush-settings label {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    border-radius: 20px;
+    font-style: italic;
+}
+
+/* Canvas styling */
+#drawingCanvas {
+    position: relative;
+    top: -3.5%;
+    right: 6%;
+    width: 112%;
+    height: 107%;
+    cursor: crosshair;
+    border-radius: 35px;
+}
+
+.action-icon {
+    position: absolute;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#undoButton {
+    right: 55px; /* Position to the right of the center box */
+}
+
+#redoButton {
+    right: 25px; /* Position to the right of the center box */
+}
+
+.shape-selection {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    z-index: 10;
+}
+
+.shape-overlay {
+    position: absolute;
+    border: 2px dashed #000; /* Outline appearance */
+    cursor: move;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    background: rgba(200, 200, 255, 0.3); /* Slight background for visibility */
+    z-index: 1100;
+}
+
+.hidden {
+    display: none;
+}
