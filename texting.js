@@ -3,15 +3,16 @@
             import { getDatabase, ref, set, push, onValue, get, child } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
             
 // Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCVHgLG6YKPXF7nkweYjFGjP2TqIVzhbj8",
-    authDomain: "docoo-3fe84.firebaseapp.com",
-    projectId: "docoo-3fe84",
-    storageBucket: "docoo-3fe84.appspot.com",
-    messagingSenderId: "582413342384",
-    appId: "1:582413342384:web:d4589e34fa9d9274874d75",
-    measurementId: "G-72WSZLTN6F"
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyCmoTmMNGUUM1n2BOggo05Xw0K0i88MOcs",
+    authDomain: "mahinw-838ea.firebaseapp.com",
+    databaseURL: "https://mahinw-838ea-default-rtdb.firebaseio.com",
+    projectId: "mahinw-838ea",
+    storageBucket: "mahinw-838ea.firebasestorage.app",
+    messagingSenderId: "721102079638",
+    appId: "1:721102079638:web:aa046794df1ac8873d64b7",
+    measurementId: "G-NSYP8Y3DYN"
+  };
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const database = getDatabase(app);
